@@ -30,34 +30,45 @@
 
 ## Project Status
 
-| Phase | Status | Last Updated |
-|-------|--------|-------------|
-| Data Organization | Not Started | - |
-| Literature Search | Not Started | - |
-| Outline | Not Started | - |
-| Tables & Figures | Not Started | - |
-| Methods & Results | Not Started | - |
-| Introduction & Conclusion | Not Started | - |
-| Discussion | Not Started | - |
-| Abstract | Not Started | - |
-| Title & Keywords | Not Started | - |
-| Humanize | Not Started | - |
-| References | Not Started | - |
-| Declarations | Not Started | - |
-| Quality Review | Not Started | - |
-| Pre-Submission | Not Started | - |
+| Phase | Status | Last Updated | Notes |
+|-------|--------|-------------|-------|
+| Ethics & Protocol | Not Started | - | `ethics/` |
+| Data Organization | Not Started | - | `data/` |
+| Literature Search | Not Started | - | `00_literature/` |
+| Outline | Not Started | - | `01_outline.md` |
+| Tables & Figures | Not Started | - | `tables/`, `figures/` |
+| Methods & Results | Not Started | - | `sections/02_methods.md`, `sections/03_results.md` |
+| Introduction & Conclusion | Not Started | - | `sections/04_introduction.md`, `sections/06_conclusion.md` |
+| Discussion | Not Started | - | `sections/05_discussion.md` |
+| Abstract & Title | Not Started | - | `sections/07_abstract.md`, `sections/08_title.md` |
+| Humanize | Not Started | - | Phase 4 |
+| References | Not Started | - | `references/09_references.md` |
+| Quality Review | Not Started | - | `checklists/` |
+| Co-author Review | Not Started | - | `coauthor-review/` |
+| Pre-Submission | Not Started | - | `submissions/v1_{journal}/` |
 
-## Declarations Status
+## Timeline
 
-| Item | Status | Notes |
-|------|--------|-------|
+| Milestone | Target Date | Actual Date | Status |
+|-----------|-------------|-------------|--------|
+| Ethics approved | | | |
+| Data ready | | | |
+| Literature search complete | | | |
+| First draft complete | | | |
+| Co-author review complete | | | |
+| Submission | | | |
+
+## Ethics & Regulatory
+
+| Item | Status | Details |
+|------|--------|---------|
 | Ethics Approval | {PENDING/DONE} | Approval #: {NUMBER} |
+| IRB Institution | {PENDING/DONE} | {INSTITUTION} |
 | Informed Consent | {PENDING/DONE} | |
-| Conflict of Interest | {PENDING/DONE} | |
-| Funding Statement | {PENDING/DONE} | |
-| Data Availability | {PENDING/DONE} | |
-| AI Disclosure | {PENDING/DONE} | |
-| Author Contributions (CRediT) | {PENDING/DONE} | |
+| Study Registration | {PENDING/DONE} | ID: {UMIN/NCT_NUMBER} |
+| Data Use Agreement | {PENDING/DONE} | |
+
+See `ethics/` for detailed documentation.
 
 ## Data Management
 
@@ -67,15 +78,34 @@
 | Data format | {CSV/XLSX/SPSS/STATA/OTHER} |
 | Records (N) | {N} |
 | De-identified | {YES/NO/PENDING} |
-| IRB approval # | {NUMBER} |
 | Analysis software | {R/STATA/SPSS/PYTHON/SAS} |
 
 - Tables: {LIST_TABLES}
 - Figures: {LIST_FIGURES}
-- Raw data: {DATA_DESCRIPTION}
 - Data dictionary: `data/data-dictionary.md`
 
-See `templates/data-management.md` for directory structure and templates.
+## Declarations Status
+
+| Item | Status | Notes |
+|------|--------|-------|
+| Conflict of Interest | {PENDING/DONE} | |
+| Funding Statement | {PENDING/DONE} | |
+| Data Availability | {PENDING/DONE} | |
+| AI Disclosure | {PENDING/DONE} | |
+| Author Contributions (CRediT) | {PENDING/DONE} | |
+
+## Authors
+
+| # | Name | Affiliation | ORCID | CRediT Roles | Approval |
+|---|------|-------------|-------|-------------|----------|
+| 1 | {CORRESPONDING} | | | | |
+| 2 | | | | | |
+
+## Submission History
+
+| # | Journal | Date Submitted | Manuscript # | Decision | Date Decision |
+|---|---------|---------------|-------------|----------|--------------|
+| 1 | | | | | |
 
 ## Key Decisions Log
 

@@ -84,60 +84,158 @@ Read `~/.claude/skills/paper-writer/references/reporting-guidelines.md` (summary
 
 ```
 {project-dir}/
-├── README.md                    # Project overview, status tracker
-├── 00_literature/
-│   ├── search-strategy.md       # Search terms, databases, dates
-│   ├── literature-matrix.md     # Structured comparison table
-│   └── key-papers/              # Notes on important papers
-├── 01_outline.md                # Paper outline / structure plan
-├── 02_methods.md                # Methods section
-├── 03_results.md                # Results section
-├── 04_introduction.md           # Introduction section
-├── 05_discussion.md             # Discussion section
-├── 06_conclusion.md             # Conclusion section
-├── 07_abstract.md               # Abstract
-├── 08_title.md                  # Title candidates and final title
-├── 09_references.md             # Reference list
-├── 10_cover-letter.md           # Cover letter to editor
-├── figures/                     # Figure files and captions
-├── tables/                      # Table files
-├── data/                        # Research data (see templates/data-management.md)
-│   ├── raw/                     # Original data (READ-ONLY)
-│   ├── processed/               # Cleaned, de-identified data
-│   ├── analysis/                # Statistical output
-│   └── data-dictionary.md       # Variable definitions
-└── checklists/
-    ├── section-quality.md       # Per-section quality checklist
-    └── submission-ready.md      # Pre-submission checklist
+├── README.md                        # Project dashboard (status, timeline, links)
+│
+├── 00_literature/                   # Phase 1: Literature
+│   ├── search-strategy.md           #   Search terms, databases, dates
+│   ├── literature-matrix.md         #   Structured comparison table
+│   └── key-papers/                  #   Notes on important papers (1 file per paper)
+│
+├── 01_outline.md                    # Phase 2: Paper skeleton
+│
+├── sections/                        # Phase 3: Manuscript sections (writing order)
+│   ├── 02_methods.md
+│   ├── 03_results.md
+│   ├── 04_introduction.md
+│   ├── 05_discussion.md
+│   ├── 06_conclusion.md
+│   ├── 07_abstract.md
+│   └── 08_title.md
+│
+├── tables/                          # Tables (numbered: table1_baseline.md, ...)
+├── figures/                         # Figures + captions (fig1_caption.md, ...)
+├── supplements/                     # Supplementary materials
+│   ├── supplementary-tables/        #   e.g., tableS1_sensitivity.md
+│   ├── supplementary-figures/       #   e.g., figS1_subgroup.md
+│   └── appendices/                  #   Additional methods, datasets, etc.
+│
+├── data/                            # Research data (see templates/data-management.md)
+│   ├── raw/                         #   Original data (READ-ONLY, gitignored)
+│   ├── processed/                   #   Cleaned, de-identified data
+│   ├── analysis/                    #   Statistical output, scripts
+│   └── data-dictionary.md           #   Variable definitions
+│
+├── ethics/                          # Ethics & regulatory
+│   ├── irb-approval.md              #   IRB approval details, number, dates
+│   ├── informed-consent.md          #   Consent process documentation
+│   ├── protocol.md                  #   Study protocol (SPIRIT if applicable)
+│   └── registration.md              #   Trial/study registration (UMIN, ClinicalTrials.gov)
+│
+├── submissions/                     # Submission history (1 subfolder per attempt)
+│   └── v1_{journal}/                #   e.g., v1_bmj/
+│       ├── compiled-manuscript.md   #     Full compiled manuscript snapshot
+│       ├── cover-letter.md          #     Cover letter
+│       ├── title-page.md            #     Title page
+│       ├── declarations.md          #     Ethics, COI, funding, AI disclosure
+│       ├── highlights.md            #     Key points (if required)
+│       ├── graphical-abstract.md    #     Graphical abstract (if required)
+│       └── submission-log.md        #     Date, portal, manuscript #, status
+│
+├── revisions/                       # Revision rounds (Phase 8)
+│   └── r1/                          #   Round 1
+│       ├── reviewer-comments.md     #     Original reviewer comments
+│       ├── response-letter.md       #     Point-by-point response
+│       ├── revision-cover-letter.md #     Revision cover letter
+│       ├── diff-summary.md          #     Changes made (section, line, change)
+│       └── compiled-manuscript.md   #     Revised manuscript snapshot
+│
+├── coauthor-review/                 # Co-author feedback tracking
+│   ├── review-tracker.md            #   Who reviewed, when, status
+│   └── feedback/                    #   Individual feedback files
+│
+├── correspondence/                  # Editor & reviewer communication log
+│   └── YYYY-MM-DD_{subject}.md      #   e.g., 2026-03-05_decision-letter.md
+│
+├── references/                      # Reference management
+│   └── 09_references.md             #   Formatted reference list
+│
+├── checklists/                      # Quality control
+│   ├── section-quality.md           #   Per-section quality scores
+│   ├── submission-ready.md          #   Pre-submission checklist
+│   ├── reporting-guideline.md       #   CONSORT/STROBE/etc. item tracking
+│   ├── gate-state.md                #   Stage-gate iteration state
+│   └── feedback-*.md                #   Auto-generated gate feedback
+│
+└── log/                             # Decision & progress log
+    ├── decisions.md                 #   Key decisions with rationale
+    ├── meetings.md                  #   Meeting notes (co-authors, supervisor)
+    └── timeline.md                  #   Milestone targets & actual dates
 ```
 
 **For Case Report:**
 
 ```
 {project-dir}/
-├── README.md                    # Project overview, status tracker
+├── README.md                        # Project dashboard
+│
 ├── 00_literature/
 │   ├── search-strategy.md
 │   ├── literature-matrix.md
 │   └── key-papers/
+│
 ├── 01_outline.md
-├── 02_case.md                   # Case presentation (CARE structure)
-├── 03_introduction.md           # Introduction (why reportable)
-├── 04_discussion.md             # Discussion
-├── 05_abstract.md               # Abstract (CARE format)
-├── 06_title.md                  # Title (must contain "case report")
-├── 07_references.md
-├── 08_cover-letter.md
-├── figures/
+│
+├── sections/
+│   ├── 02_case.md                   # Case presentation (CARE structure)
+│   ├── 03_introduction.md           # Introduction (why reportable)
+│   ├── 04_discussion.md
+│   ├── 05_abstract.md               # Abstract (CARE format)
+│   └── 06_title.md                  # Title (must contain "case report")
+│
 ├── tables/
-├── data/                        # Research data (see templates/data-management.md)
+├── figures/
+├── supplements/
+│   ├── supplementary-tables/
+│   ├── supplementary-figures/
+│   └── appendices/
+│
+├── data/
 │   ├── raw/
 │   ├── processed/
 │   ├── analysis/
 │   └── data-dictionary.md
-└── checklists/
-    ├── section-quality.md
-    └── submission-ready.md
+│
+├── ethics/
+│   ├── irb-approval.md
+│   ├── informed-consent.md          # Patient consent for publication
+│   └── patient-perspective.md       # Patient's perspective (CARE item)
+│
+├── submissions/
+│   └── v1_{journal}/
+│       ├── compiled-manuscript.md
+│       ├── cover-letter.md
+│       ├── title-page.md
+│       ├── declarations.md
+│       └── submission-log.md
+│
+├── revisions/
+│   └── r1/
+│       ├── reviewer-comments.md
+│       ├── response-letter.md
+│       ├── diff-summary.md
+│       └── compiled-manuscript.md
+│
+├── coauthor-review/
+│   ├── review-tracker.md
+│   └── feedback/
+│
+├── correspondence/
+│   └── YYYY-MM-DD_{subject}.md
+│
+├── references/
+│   └── 07_references.md
+│
+├── checklists/
+│   ├── section-quality.md
+│   ├── submission-ready.md
+│   ├── reporting-guideline.md
+│   ├── gate-state.md
+│   └── feedback-*.md
+│
+└── log/
+    ├── decisions.md
+    ├── meetings.md
+    └── timeline.md
 ```
 
 Read `~/.claude/skills/paper-writer/templates/project-init.md` with the `Read` tool and use it to generate `README.md`. For Case Reports, use `project-init-case.md` instead.
@@ -342,7 +440,7 @@ Read `~/.claude/skills/paper-writer/templates/methods.md` and `~/.claude/skills/
 - Every Table/Figure must be mentioned in text
 - Methods ↔ Results must correspond 1:1
 
-Write `02_methods.md` and `03_results.md` together, ensuring perfect correspondence. Cross-check: every subsection in Methods must map to a corresponding subsection in Results, and vice versa.
+Write `sections/02_methods.md` and `sections/03_results.md` together, ensuring perfect correspondence. Cross-check: every subsection in Methods must map to a corresponding subsection in Results, and vice versa.
 
 **Workflow**: Write Methods subsection 1 → Results subsection 1 → Methods subsection 2 → Results subsection 2 → ... This interleaving ensures 1:1 correspondence.
 
@@ -362,7 +460,7 @@ Read `~/.claude/skills/paper-writer/templates/introduction.md` and `~/.claude/sk
 - One core message
 - Brief and direct
 
-Write the final paragraph of `04_introduction.md` and `06_conclusion.md` together to ensure they mirror each other.
+Write the final paragraph of `sections/04_introduction.md` and `sections/06_conclusion.md` together to ensure they mirror each other.
 
 ##### Step 3.3: Discussion
 
@@ -383,13 +481,13 @@ N+2. Clinical implications / future directions
 
 ##### Step 3.4: Introduction (Paragraphs 1-2)
 
-Now write paragraphs 1-2 of `04_introduction.md`. The background should funnel toward the research question already written in paragraph 3.
+Now write paragraphs 1-2 of `sections/04_introduction.md`. The background should funnel toward the research question already written in paragraph 3.
 
 ##### Step 3.5: Abstract
 
 Read `~/.claude/skills/paper-writer/templates/abstract.md` with the `Read` tool.
 
-Write `07_abstract.md` as a structured abstract:
+Write `sections/07_abstract.md` as a structured abstract:
 - Background/Objective (1-2 sentences)
 - Methods (2-3 sentences)
 - Results (3-4 sentences)
@@ -399,7 +497,7 @@ Check the journal-specific word limit captured in Phase 0. The Abstract must be 
 
 ##### Step 3.6: Title
 
-Write `08_title.md` with 3-5 title candidates. Evaluate each against:
+Write `sections/08_title.md` with 3-5 title candidates. Evaluate each against:
 - Specific (what was studied?)
 - Concise (< 15 words ideal)
 - Contains keywords (searchable)
@@ -724,7 +822,7 @@ After humanization:
 
 Read `~/.claude/skills/paper-writer/references/citation-guide.md` with the `Read` tool.
 
-Build `09_references.md` (or `07_references.md` for Case Reports):
+Build `references/09_references.md` (or `references/07_references.md` for Case Reports):
 
 1. Collect all cited papers from all sections
 2. Format according to target journal style captured in Phase 0 (Vancouver, APA, etc.)
@@ -763,7 +861,9 @@ Create:
 4. **Declarations** — read `~/.claude/skills/paper-writer/templates/declarations.md` and complete (Ethics, COI using `references/coi-detailed.md`, Funding, Data Availability, AI Disclosure, CRediT)
 5. Cover letter using the template
 6. `checklists/submission-ready.md` using the template — fill in journal-specific limits from Phase 0
-7. Compile all sections into a single reading-order Markdown file for the user to review
+7. Compile all sections into a single reading-order Markdown file → `submissions/v1_{journal}/compiled-manuscript.md`
+8. Create `submissions/v1_{journal}/submission-log.md` with submission date, portal, manuscript ID
+9. Log the submission in `log/timeline.md`
 
 **Final compilation order (reading order):**
 
@@ -777,7 +877,7 @@ For Case Report:
 Title → Abstract → Introduction → Case Presentation → Discussion → References
 ```
 
-The compiled file should include all section content in sequence. Tables and Figures should be referenced but kept in their separate folders.
+The compiled file should include all section content in sequence. Tables and Figures should be referenced but kept in their separate folders. All submission documents go into `submissions/v1_{journal}/`.
 
 ### Phase 8: Revision (Post-Review)
 
@@ -785,7 +885,7 @@ When the user receives reviewer comments (peer review, editorial decision letter
 
 #### Step 8.1: Organize Reviewer Comments
 
-Create `revision/reviewer-comments.md`:
+Create `revisions/r1/reviewer-comments.md`:
 
 1. Parse the decision letter and reviewer comments
 2. Number each comment sequentially (R1-1, R1-2, R2-1, R2-2, etc.)
@@ -797,7 +897,7 @@ Create `revision/reviewer-comments.md`:
 
 #### Step 8.2: Create Response Letter
 
-Create `revision/response-letter.md`:
+Create `revisions/r1/response-letter.md`:
 
 For each comment, use this format:
 

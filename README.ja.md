@@ -155,6 +155,40 @@ flowchart TB
 
 ジャーナルを指定すると、word limit・citation style・abstract形式などを自動調査してREADME.mdに記録する。
 
+## 生成されるプロジェクト構造 (v3.2)
+
+各論文プロジェクトは、研究の立ち上げから完成までを包括的に管理するディレクトリを生成します：
+
+```
+{project-dir}/
+├── README.md                        # プロジェクトダッシュボード（状態・タイムライン・リンク）
+├── 00_literature/                   # 文献検索・マトリクス
+├── 01_outline.md                    # 論文骨格
+├── sections/                        # 原稿セクション（執筆順）
+│   ├── 02_methods.md ... 08_title.md
+├── tables/                          # 表（番号付き）
+├── figures/                         # 図・キャプション
+├── supplements/                     # 補足資料
+│   ├── supplementary-tables/
+│   ├── supplementary-figures/
+│   └── appendices/
+├── data/                            # 研究データ（raw → processed → analysis）
+│   ├── raw/                         # 元データ（読み取り専用、gitignore）
+│   ├── processed/                   # クリーニング・匿名化済み
+│   ├── analysis/                    # 統計出力
+│   └── data-dictionary.md
+├── ethics/                          # 倫理審査・同意書・プロトコル・登録
+├── submissions/                     # 投稿履歴（v1_bmj/, v2_lancet/, ...）
+│   └── v1_{journal}/               # コンパイル原稿・カバーレター・宣言書
+├── revisions/                       # 修正ラウンド（r1/, r2/, ...）
+│   └── r1/                          # 査読コメント・回答書・差分
+├── coauthor-review/                 # 共著者フィードバック管理
+├── correspondence/                  # 編集者・査読者との通信記録
+├── references/                      # フォーマット済み参考文献リスト
+├── checklists/                      # 品質ゲート・報告ガイドライン追跡
+└── log/                             # 意思決定・会議メモ・タイムライン
+```
+
 ## ファイル構成
 
 ```
@@ -325,6 +359,7 @@ Private repository.
 
 ## バージョン
 
+- **v3.2.0** (2026-03-05) — 研究プロジェクトフォルダ管理: 包括的ディレクトリ再構築
 - **v3.1.0** (2026-03-05) — 自律ステージゲートシステム: 8品質ゲート + 自動修正ループ
 - **v3.0.0** (2026-03-05) — チームモード: 7並列エージェントによる同時実行
 - **v2.1.0** (2026-02-17) — データ管理・解析統合、4ファイル追加

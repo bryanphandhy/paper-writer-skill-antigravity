@@ -28,33 +28,43 @@
 
 ## Project Status
 
-| Phase | Status | Last Updated |
-|-------|--------|-------------|
-| Data Organization | Not Started | - |
-| Literature Search | Not Started | - |
-| Outline | Not Started | - |
-| Tables & Figures | Not Started | - |
-| Case Presentation | Not Started | - |
-| Discussion | Not Started | - |
-| Introduction | Not Started | - |
-| Abstract | Not Started | - |
-| Title & Keywords | Not Started | - |
-| Humanize | Not Started | - |
-| References | Not Started | - |
-| Declarations | Not Started | - |
-| Quality Review | Not Started | - |
-| Pre-Submission | Not Started | - |
+| Phase | Status | Last Updated | Notes |
+|-------|--------|-------------|-------|
+| Ethics & Consent | Not Started | - | `ethics/` |
+| Data Organization | Not Started | - | `data/` |
+| Literature Search | Not Started | - | `00_literature/` |
+| Outline | Not Started | - | `01_outline.md` |
+| Tables & Figures | Not Started | - | `tables/`, `figures/` |
+| Case Presentation | Not Started | - | `sections/02_case.md` |
+| Discussion | Not Started | - | `sections/04_discussion.md` |
+| Introduction | Not Started | - | `sections/03_introduction.md` |
+| Abstract & Title | Not Started | - | `sections/05_abstract.md`, `sections/06_title.md` |
+| Humanize | Not Started | - | Phase 4 |
+| References | Not Started | - | `references/07_references.md` |
+| Quality Review | Not Started | - | `checklists/` |
+| Co-author Review | Not Started | - | `coauthor-review/` |
+| Pre-Submission | Not Started | - | `submissions/v1_{journal}/` |
 
-## Declarations Status
+## Timeline
 
-| Item | Status | Notes |
-|------|--------|-------|
+| Milestone | Target Date | Actual Date | Status |
+|-----------|-------------|-------------|--------|
+| Patient consent obtained | | | |
+| Literature search complete | | | |
+| First draft complete | | | |
+| Co-author review complete | | | |
+| Submission | | | |
+
+## Ethics & Patient Consent
+
+| Item | Status | Details |
+|------|--------|---------|
 | Ethics Approval | Pending | |
 | Informed Consent for Publication | Pending | Required for case reports |
-| Conflict of Interest | Pending | |
-| Funding Statement | Pending | |
-| AI Disclosure | Pending | |
-| Author Contributions (CRediT) | Pending | |
+| Patient Image Consent | Pending | If applicable |
+| Patient Perspective | Pending | CARE guideline item |
+
+See `ethics/` for detailed documentation.
 
 ## Data Management
 
@@ -68,7 +78,27 @@
 - Images/Figures: {LIST_FIGURES}
 - Lab results: {LAB_RESULTS}
 
-See `templates/data-management.md` for directory structure and templates.
+## Declarations Status
+
+| Item | Status | Notes |
+|------|--------|-------|
+| Conflict of Interest | Pending | |
+| Funding Statement | Pending | |
+| AI Disclosure | Pending | |
+| Author Contributions (CRediT) | Pending | |
+
+## Authors
+
+| # | Name | Affiliation | ORCID | CRediT Roles | Approval |
+|---|------|-------------|-------|-------------|----------|
+| 1 | {CORRESPONDING} | | | | |
+| 2 | | | | | |
+
+## Submission History
+
+| # | Journal | Date Submitted | Manuscript # | Decision | Date Decision |
+|---|---------|---------------|-------------|----------|--------------|
+| 1 | | | | | |
 
 ## Key Decisions Log
 

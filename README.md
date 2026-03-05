@@ -155,6 +155,40 @@ The skill prompts you for:
 
 When a target journal is specified, the skill automatically looks up word limits, citation style, abstract format, and other requirements.
 
+## Generated Project Structure (v3.2)
+
+Each paper project generates a comprehensive directory for managing the entire research lifecycle:
+
+```
+{project-dir}/
+├── README.md                        # Project dashboard (status, timeline, links)
+├── 00_literature/                   # Literature search & matrix
+├── 01_outline.md                    # Paper skeleton
+├── sections/                        # Manuscript sections (writing order)
+│   ├── 02_methods.md ... 08_title.md
+├── tables/                          # Tables (numbered)
+├── figures/                         # Figures + captions
+├── supplements/                     # Supplementary materials
+│   ├── supplementary-tables/
+│   ├── supplementary-figures/
+│   └── appendices/
+├── data/                            # Research data (raw → processed → analysis)
+│   ├── raw/                         # Original data (READ-ONLY, gitignored)
+│   ├── processed/                   # Cleaned, de-identified
+│   ├── analysis/                    # Statistical output
+│   └── data-dictionary.md
+├── ethics/                          # IRB, consent, protocol, registration
+├── submissions/                     # Submission history (v1_bmj/, v2_lancet/, ...)
+│   └── v1_{journal}/               # Compiled manuscript + cover letter + declarations
+├── revisions/                       # Revision rounds (r1/, r2/, ...)
+│   └── r1/                          # Reviewer comments + response + diff
+├── coauthor-review/                 # Co-author feedback tracking
+├── correspondence/                  # Editor & reviewer communication log
+├── references/                      # Formatted reference list
+├── checklists/                      # Quality gates, reporting guideline tracking
+└── log/                             # Decisions, meetings, timeline
+```
+
 ## File Structure
 
 ```
@@ -325,6 +359,7 @@ Private repository.
 
 ## Versions
 
+- **v3.2.0** (2026-03-05) — Research project folder management: comprehensive directory restructuring
 - **v3.1.0** (2026-03-05) — Autonomous Stage-Gate System: 8 quality gates with auto-fix loops
 - **v3.0.0** (2026-03-05) — Team Mode: 7 parallel agents for concurrent execution
 - **v2.1.0** (2026-02-17) — Data management & analysis integration, 4 new files

@@ -1,5 +1,45 @@
 # Changelog
 
+## [3.2.0] - 2026-03-05
+
+### Research Project Folder Management
+
+Comprehensive directory restructuring for managing the full research lifecycle from inception to publication.
+
+### Directory Structure Changes
+
+| Change | Description |
+|--------|-------------|
+| `sections/` subfolder | Manuscript sections moved into dedicated subfolder (`sections/02_methods.md` etc.) |
+| `supplements/` | New: supplementary-tables/, supplementary-figures/, appendices/ |
+| `ethics/` | New: IRB approval, informed consent, study protocol, trial registration |
+| `submissions/` | New: versioned submission history (`v1_bmj/`, `v2_lancet/`) |
+| `revisions/` | New: revision rounds (`r1/`, `r2/`) with reviewer comments + response |
+| `coauthor-review/` | New: co-author feedback tracking |
+| `correspondence/` | New: editor & reviewer communication log |
+| `references/` | Separate folder for formatted reference list |
+| `log/` | New: decision log, meeting notes, timeline |
+
+### Template Updates
+
+| File | Changes |
+|------|---------|
+| `project-init.md` | Added Timeline, Ethics & Regulatory, Authors, Submission History, Key Decisions Log sections |
+| `project-init-case.md` | Same + case-specific ethics (patient consent, image consent, patient perspective) |
+
+### SKILL.md Updates
+
+- Updated all file path references to use `sections/`, `references/`, `revisions/` prefixes
+- Updated directory trees for both Original Article and Case Report
+- Phase 7 compilation target: `submissions/v1_{journal}/compiled-manuscript.md`
+- Phase 8 revision paths: `revisions/r1/reviewer-comments.md`, `revisions/r1/response-letter.md`
+
+### README Updates
+
+- Added "Generated Project Structure (v3.2)" section to both README.md and README.ja.md
+
+---
+
 ## [3.1.0] - 2026-03-05
 
 ### Autonomous Stage-Gate System
