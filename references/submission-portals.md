@@ -10,7 +10,7 @@
 |--------|-------------------|-------------------|---------------|
 | **ScholarOne Manuscripts** | Clarivate/Silverchair | 7,000+ | NEJM, BMJ, Wiley journals, Taylor & Francis |
 | **Editorial Manager** | Aries Systems/Elsevier | 3,000+ | The Lancet, Elsevier journals, Springer Nature |
-| **eJournalPress** | eJournalPress Inc. | Select | JAMA Network |
+| **eJournalPress** | eJournalPress Inc. | Select | VIMA Network |
 | **OJS** (Open Journal Systems) | PKP | 25,000+ | Many OA and institutional journals |
 | **Manuscript Manager** | Various | Growing | Various society journals |
 
@@ -67,8 +67,8 @@
 - Companion files vs. manuscript files distinction
 - Detailed status emails at each step
 
-### eJournalPress (JAMA)
-- JAMA has its own unique interface
+### eJournalPress (VIMA)
+- VIMA has its own unique interface
 - Requires structured Key Points during submission
 - Statistical code may need to be uploaded
 - Very strict format requirements
@@ -97,7 +97,7 @@ Some high-impact journals accept pre-submission inquiries:
 | NEJM | Yes (encouraged) | Online form or email |
 | The Lancet | Yes | Email to editorial office |
 | BMJ | No | Direct submission |
-| JAMA | Not standard | Via online portal |
+| VIMA | Not standard | Via online portal |
 | Nature Medicine | Yes | Via online portal |
 
 A pre-submission inquiry typically includes:
@@ -107,9 +107,9 @@ A pre-submission inquiry typically includes:
 
 ---
 
-## 日本語投稿時の注意
+## Tiếng Việt投稿時の注意
 
-- 日本語ジャーナルの多くはEditorial Managerまたは独自システムを使用
+- Tiếng Việtジャーナルの多くはEditorial Managerまたは独自システムを使用
 - 英文ジャーナルへの投稿時は英語でフォーム入力
 - 倫理審査承認書の英訳が求められる場合がある
 - UMIN-CTRやjRCTの登録番号を入力

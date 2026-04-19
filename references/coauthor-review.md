@@ -1,4 +1,4 @@
-# Co-Author Review Workflow
+﻿# Co-Author Review Workflow
 
 ## Overview
 
@@ -100,7 +100,7 @@ Attachments:
 - [Author_contribution_form.xlsx]
 ```
 
-### Japanese Email Template
+### Vietnamese Email Template
 
 ```
 件名：論文原稿のご確認依頼 - [略題] - [日付]までにご返信ください
@@ -374,7 +374,7 @@ Best regards,
 [Corresponding Author]
 ```
 
-### Final Approval Email Template (Japanese)
+### Final Approval Email Template (Vietnamese)
 
 ```
 件名：【最終承認依頼】[略題] - [日付]までにご返信ください
@@ -419,3 +419,4 @@ Create a shared spreadsheet with these columns:
 ```
 
 This provides a single-view dashboard for managing the entire co-author workflow.
+

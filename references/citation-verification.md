@@ -98,7 +98,7 @@ Cross-reference the author list:
 ```
 # PubMed author search
 [LastName FirstInitial][au]
-Example: Smith JA[au] AND machine learning[tiab]
+Example: Smith VI[au] AND machine learning[tiab]
 
 # ORCID lookup (if available)
 https://orcid.org/[ORCID-ID]

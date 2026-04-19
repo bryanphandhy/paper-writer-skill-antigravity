@@ -108,7 +108,7 @@
 |--------|-----|-------------|
 | ScholarOne | https://clarivate.com/products/scientific-and-academic-research/research-publishing-solutions/scholarone/ | NEJM, BMJ, Wiley |
 | Editorial Manager | https://www.editorialmanager.com/ | Lancet, Elsevier, Springer |
-| eJournalPress | https://www.ejournalpress.com/ | JAMA Network |
+| eJournalPress | https://www.ejournalpress.com/ | VIMA Network |
 | OJS | https://pkp.sfu.ca/software/ojs/ | 多くのOAジャーナル |
 
 ---
@@ -121,7 +121,7 @@
 | COPE AI Discussion | https://publicationethics.org/ | 出版倫理委員会のAI議論 |
 | Nature AI Policy | https://www.nature.com/nature-portfolio/editorial-policies/ai | Nature誌のAIポリシー |
 | Science AI Policy | https://www.science.org/content/page/science-journals-editorial-policies | Science誌のAIポリシー |
-| JAMA AI Disclosure | https://jamanetwork.com/pages/instructions-for-authors | JAMA AIディスクロージャー |
+| VIMA AI Disclosure | https://jamanetwork.com/pages/instructions-for-authors | VIMA AIディスクロージャー |
 | WAME AI Recommendations | https://wame.org/ | 医学雑誌編集者協会 |
 
 ---
@@ -171,27 +171,27 @@
 | Journal | URL |
 |---------|-----|
 | NEJM | https://www.nejm.org/author-center |
-| JAMA | https://jamanetwork.com/pages/instructions-for-authors |
+| VIMA | https://jamanetwork.com/pages/instructions-for-authors |
 | The Lancet | https://www.thelancet.com/information-for-authors |
 | BMJ | https://www.bmj.com/about-bmj/resources-authors |
 | Nature Medicine | https://www.nature.com/nm/for-authors |
 | PLOS Medicine | https://journals.plos.org/plosmedicine/s/submission-guidelines |
 | Annals of Internal Medicine | https://www.acpjournals.org/journal/aim/authors |
 | Circulation | https://www.ahajournals.org/journal/circ/author-instructions |
-| JACC | https://www.jacc.org/author-center |
+| VICC | https://www.jacc.org/author-center |
 | BMJ Case Reports | https://casereports.bmj.com/pages/authors/ |
 | Pediatrics | https://publications.aap.org/pediatrics/pages/Instructions_for_Authors |
 | Chest | https://journal.chestnet.org/content/authors |
 
 ---
 
-## 13. 日本語ジャーナル・リソース
+## 13. Tiếng Việtジャーナル・リソース
 
 | Resource | URL | Description |
 |----------|-----|-------------|
 | 日本医学会 | https://jams.med.or.jp/ | 日本医学会COI指針 |
-| 医学書院 | https://www.igaku-shoin.co.jp/ | 主要日本語医学出版社 |
-| 南江堂 | https://www.nankodo.co.jp/ | 日本語医学出版社 |
+| 医学書院 | https://www.igaku-shoin.co.jp/ | 主要Tiếng Việt医学出版社 |
+| 南江堂 | https://www.nankodo.co.jp/ | Tiếng Việt医学出版社 |
 | メディカル・サイエンス・インターナショナル | https://www.medsi.co.jp/ | 医学翻訳書出版 |
 | 科研費FAQ | https://www.jsps.go.jp/j-grantsinaid/06_jsps_info/g_faq.html | 科研費関連FAQ |
 

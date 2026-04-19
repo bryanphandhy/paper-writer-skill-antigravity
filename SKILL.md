@@ -1,6 +1,6 @@
 ---
 name: paper-writer
-description: "Medical/scientific paper writing workflow skill. Manages the full pipeline from literature search to submission-ready manuscript. Creates and manages a project directory with IMRAD-format section files, literature matrix, reference management, and quality checklists. Supports both English and Japanese papers. Triggers: 'write paper', 'paper-write', 'start manuscript', '論文を書く', '論文執筆', '論文プロジェクト', 'manuscript', 'research paper', '原稿作成'."
+description: "Medical/scientific paper writing workflow skill. Manages the full pipeline from literature search to submission-ready manuscript. Creates and manages a project directory with IMRAD-format section files, literature matrix, reference management, and quality checklists. Supports both English and Vietnamese papers. Triggers: 'write paper', 'paper-write', 'start manuscript', '論文を書く', '論文執筆', '論文プロジェクト', 'manuscript', 'research paper', '原稿作成'."
 ---
 
 # Paper Writer Skill
@@ -37,7 +37,7 @@ When the user invokes this skill, ask for:
 1. **Working title** (can change later)
 2. **Paper type** (Original Article / Case Report / Review / Letter / Systematic Review)
 3. **Target journal** (optional but recommended)
-4. **Language** (English / Japanese / Both)
+4. **Language** (English / Vietnamese / Both)
 5. **Research question** in one sentence
 6. **Key data** available (what Tables/Figures already exist?)
 
@@ -55,7 +55,7 @@ If a target journal is specified, look up and document:
 - **Keywords**: number required, MeSH preferred or free-text. See `references/keywords-guide.md`.
 - **Graphical abstract**: required or optional. See `templates/graphical-abstract.md`.
 
-Use `WebSearch` to look up the journal's "Instructions for Authors" page.
+Use `search_web` to look up the journal's "Instructions for Authors" page.
 
 Record all requirements in the README.md under a "Journal Requirements" section.
 
@@ -76,7 +76,7 @@ Based on paper type and study design, select the appropriate reporting guideline
 | Animal research | ARRIVE 2.0 | `references/reporting-guidelines-full.md` |
 | Health economics | CHEERS 2022 | `references/reporting-guidelines-full.md` |
 
-Read `~/.claude/skills/paper-writer/references/reporting-guidelines.md` (summary) or `references/reporting-guidelines-full.md` (comprehensive) and note the key checklist items for the selected guideline. These items will be checked throughout the writing process.
+Read `[workspace]/paper-writer-skill-antigravity/references/reporting-guidelines.md` (summary) or `references/reporting-guidelines-full.md` (comprehensive) and note the key checklist items for the selected guideline. These items will be checked throughout the writing process.
 
 #### Step 0.3: Create Project Directory
 
@@ -238,7 +238,7 @@ Read `~/.claude/skills/paper-writer/references/reporting-guidelines.md` (summary
     └── timeline.md
 ```
 
-Read `~/.claude/skills/paper-writer/templates/project-init.md` with the `Read` tool and use it to generate `README.md`. For Case Reports, use `project-init-case.md` instead.
+Read `[workspace]/paper-writer-skill-antigravity/templates/project-init.md` with the `view_file` tool and use it to generate `README.md`. For Case Reports, use `project-init-case.md` instead.
 
 **File numbering follows the recommended writing order**, not the reading order. This is intentional.
 
@@ -247,7 +247,7 @@ Read `~/.claude/skills/paper-writer/templates/project-init.md` with the `Read` t
 If the user has existing research data (clinical records, CSV files, statistical output, etc.):
 
 1. Create `data/raw/`, `data/processed/`, `data/analysis/` directories
-2. Read `~/.claude/skills/paper-writer/templates/data-management.md` for the full template
+2. Read `[workspace]/paper-writer-skill-antigravity/templates/data-management.md` for the full template
 3. Ask the user to place raw data files in `data/raw/` — these files are **READ-ONLY** from this point
 4. Create `data/raw/README.md` documenting the data source, extraction date, and IRB information
 5. Create `data/data-dictionary.md` listing all variables with types, ranges, and labels
@@ -262,7 +262,7 @@ If the user has existing research data (clinical records, CSV files, statistical
 
 #### Step 0.5: Data Analysis
 
-If the user has quantitative data ready for analysis, Claude Code can execute Python scripts directly. Read `~/.claude/skills/paper-writer/templates/analysis-workflow.md` for the full workflow.
+If the user has quantitative data ready for analysis, Antigravity can execute Python scripts directly. Read `[workspace]/paper-writer-skill-antigravity/templates/analysis-workflow.md` for the full workflow.
 
 **Available analysis scripts:**
 
@@ -310,35 +310,29 @@ See `references/statistical-reporting-full.md` for detailed SAMPL guidelines and
 
 Create `00_literature/search-strategy.md` with:
 
-- **Databases**: PubMed, Google Scholar (always available); Scopus, CiNii (if user has institutional access)
-- **Search terms**: MeSH terms + free-text keywords
+- **Databases**: Consensus (via `mcp_Consensus_search`), PubMed, Google Scholar
+- **Search terms**: Academic terminology
 - **Inclusion/exclusion criteria** for papers
 - **Date range**
 
 **How to search:**
 
-Use `WebSearch` with targeted queries:
-- For PubMed: search `"search terms" pediatric asthma pubmed`
-- For Google Scholar: search `"search terms" site:scholar.google.com`
-- For general: search the research question directly
+Use the `mcp_Consensus_search` tool to search over 200 million peer-reviewed academic papers.
+- Use `query` to specify the research topic. Be specific and use academic terminology.
+- You can filter using parameters like `year_min`, `study_types`, and `human`.
+- This tool returns paper titles, authors, abstracts, citation counts, and direct URLs.
 
-If WebSearch results are limited, use `WebFetch` on specific PubMed URLs:
-```
-https://pubmed.ncbi.nlm.nih.gov/?term=search+terms&sort=date
-```
-
-**Important**: WebSearch may not reliably return PubMed results with `site:` filtering. If results are poor, try broader searches and filter manually, or ask the user to provide key papers they already know.
+If `mcp_Consensus_search` results are limited, supplement with `search_web` or ask the user to provide key papers they already know.
 
 **Practical reality**: AI-based literature search has significant limitations. The most reliable workflow is:
 1. Ask the user to provide their 3-5 key papers (they usually know them already)
-2. Use WebSearch to supplement with additional relevant papers
-3. Use `references/pubmed-query-builder.md` to construct proper PubMed queries
-4. Have the user validate the final literature list for completeness
-5. Verify every AI-found citation exists (see `references/citation-verification.md`)
+2. Use `mcp_Consensus_search` to find high-quality, peer-reviewed citations to fill in the gaps.
+3. Use `references/pubmed-query-builder.md` to construct proper PubMed queries if needed.
+4. Have the user validate the final literature list for completeness.
 
 #### Step 1.2: Build Literature Matrix
 
-Read `~/.claude/skills/paper-writer/templates/literature-matrix.md` with the `Read` tool.
+Read `[workspace]/paper-writer-skill-antigravity/templates/literature-matrix.md` with the `view_file` tool.
 
 For each relevant paper found, extract and organize:
 
@@ -361,7 +355,7 @@ For the 3-5 most important papers, create individual notes in `00_literature/key
 
 Create `01_outline.md` with the paper skeleton.
 
-Read `~/.claude/skills/paper-writer/references/imrad-guide.md` with the `Read` tool for the detailed IMRAD structure. For Case Reports, this guide does not apply directly — use the CARE structure instead.
+Read `[workspace]/paper-writer-skill-antigravity/references/imrad-guide.md` with the `view_file` tool for the detailed IMRAD structure. For Case Reports, this guide does not apply directly — use the CARE structure instead.
 
 The outline should specify:
 
@@ -375,7 +369,7 @@ The outline should specify:
 
 ### Phase 2.5: Tables & Figures
 
-Read `~/.claude/skills/paper-writer/references/tables-figures-guide.md` with the `Read` tool.
+Read `[workspace]/paper-writer-skill-antigravity/references/tables-figures-guide.md` with the `view_file` tool.
 
 Tables and figures are the backbone of a paper — many reviewers look at the abstract, then the tables/figures, before reading the text. **Design them before writing prose** so the text can reference them naturally.
 
@@ -413,7 +407,7 @@ Create caption files in `figures/` directory:
 
 #### Step 2.5.4: Graphical Abstract (if required)
 
-If the journal requires or encourages a graphical abstract, read `~/.claude/skills/paper-writer/templates/graphical-abstract.md` and plan the visual summary.
+If the journal requires or encourages a graphical abstract, read `[workspace]/paper-writer-skill-antigravity/templates/graphical-abstract.md` and plan the visual summary.
 
 **Get user review on table/figure plan before proceeding to drafting.**
 
@@ -427,7 +421,7 @@ If the journal requires or encourages a graphical abstract, read `~/.claude/skil
 
 ##### Step 3.1: Methods & Results (Write as a pair)
 
-Read `~/.claude/skills/paper-writer/templates/methods.md` and `~/.claude/skills/paper-writer/templates/results.md` with the `Read` tool.
+Read `[workspace]/paper-writer-skill-antigravity/templates/methods.md` and `[workspace]/paper-writer-skill-antigravity/templates/results.md` with the `view_file` tool.
 
 **Methods rules:**
 - Reproducibility is everything
@@ -446,7 +440,7 @@ Write `sections/02_methods.md` and `sections/03_results.md` together, ensuring p
 
 ##### Step 3.2: Introduction (Paragraph 3) & Conclusion (Write as a pair)
 
-Read `~/.claude/skills/paper-writer/templates/introduction.md` and `~/.claude/skills/paper-writer/templates/conclusion.md` with the `Read` tool.
+Read `[workspace]/paper-writer-skill-antigravity/templates/introduction.md` and `[workspace]/paper-writer-skill-antigravity/templates/conclusion.md` with the `view_file` tool.
 
 **Why write Paragraph 3 first?** The study objective (Introduction P3) and the conclusion must mirror each other. Writing them together guarantees alignment. Paragraphs 1-2 provide background that funnels toward the objective — they are easier to write once the objective is locked.
 
@@ -464,12 +458,12 @@ Write the final paragraph of `sections/04_introduction.md` and `sections/06_conc
 
 ##### Step 3.3: Discussion
 
-Read `~/.claude/skills/paper-writer/templates/discussion.md` with the `Read` tool.
+Read `[workspace]/paper-writer-skill-antigravity/templates/discussion.md` with the `view_file` tool.
 
 **Discussion structure:**
 1. Summary of main findings
 2-N. Comparison with prior literature (use `00_literature/literature-matrix.md`)
-N+1. Limitations — read `~/.claude/skills/paper-writer/templates/limitations-guide.md` for categories, templates, and bilingual examples
+N+1. Limitations — read `[workspace]/paper-writer-skill-antigravity/templates/limitations-guide.md` for categories, templates, and bilingual examples
 N+2. Clinical implications / future directions
 
 **Discussion rules:**
@@ -485,7 +479,7 @@ Now write paragraphs 1-2 of `sections/04_introduction.md`. The background should
 
 ##### Step 3.5: Abstract
 
-Read `~/.claude/skills/paper-writer/templates/abstract.md` with the `Read` tool.
+Read `[workspace]/paper-writer-skill-antigravity/templates/abstract.md` with the `view_file` tool.
 
 Write `sections/07_abstract.md` as a structured abstract:
 - Background/Objective (1-2 sentences)
@@ -511,7 +505,7 @@ Write `sections/08_title.md` with 3-5 title candidates. Evaluate each against:
 
 ##### Step 3.1-CR: Case Presentation
 
-Read `~/.claude/skills/paper-writer/templates/case-report.md` with the `Read` tool.
+Read `[workspace]/paper-writer-skill-antigravity/templates/case-report.md` with the `view_file` tool.
 
 Write `02_case.md` following the CARE structure:
 1. Patient information (demographics, history)
@@ -531,7 +525,7 @@ Write `02_case.md` following the CARE structure:
 
 ##### Step 3.2-CR: Discussion
 
-Read `~/.claude/skills/paper-writer/templates/discussion.md` with the `Read` tool.
+Read `[workspace]/paper-writer-skill-antigravity/templates/discussion.md` with the `view_file` tool.
 
 Write `04_discussion.md`:
 1. Why this case is significant (clinical lesson)
@@ -543,7 +537,7 @@ Keep it focused and shorter than in an Original Article.
 
 ##### Step 3.3-CR: Introduction
 
-Read `~/.claude/skills/paper-writer/templates/case-introduction.md` with the `Read` tool.
+Read `[workspace]/paper-writer-skill-antigravity/templates/case-introduction.md` with the `view_file` tool.
 
 Write `03_introduction.md`:
 1. Brief background on the condition
@@ -554,7 +548,7 @@ Write the Introduction AFTER the Case section — you need to know the full case
 
 ##### Step 3.4-CR: Abstract
 
-Read `~/.claude/skills/paper-writer/templates/case-abstract.md` with the `Read` tool.
+Read `[workspace]/paper-writer-skill-antigravity/templates/case-abstract.md` with the `view_file` tool.
 
 Write `05_abstract.md` using the CARE abstract structure:
 - Background (1-2 sentences: why this case is worth reporting)
@@ -580,7 +574,7 @@ Review articles synthesize existing literature on a topic. The structure is them
 
 ##### Step 3.1-RA: Thematic Sections
 
-Read `~/.claude/skills/paper-writer/templates/discussion.md` for general writing guidance.
+Read `[workspace]/paper-writer-skill-antigravity/templates/discussion.md` for general writing guidance.
 
 Organize the body into thematic sections based on the outline. Common structures:
 1. **Chronological**: Evolution of understanding over time
@@ -629,7 +623,7 @@ Write title candidates. For review articles:
 
 #### 3-D: Systematic Review Workflow
 
-Read `~/.claude/skills/paper-writer/templates/sr-outline.md` with the `Read` tool for the complete PRISMA 2020-compliant template.
+Read `[workspace]/paper-writer-skill-antigravity/templates/sr-outline.md` with the `view_file` tool for the complete PRISMA 2020-compliant template.
 
 Systematic reviews follow a strict, pre-registered protocol. The template provides the full structure with PRISMA 2020 checklist item numbers.
 
@@ -710,7 +704,7 @@ Short, direct titles work best. No need for elaborate structure.
 
 ### Phase 4: Humanize
 
-Read `~/.claude/skills/paper-writer/references/humanizer-academic.md` with the `Read` tool.
+Read `[workspace]/paper-writer-skill-antigravity/references/humanizer-academic.md` with the `view_file` tool.
 
 After drafting, run a humanization pass on every section to remove AI-generated writing patterns.
 
@@ -738,7 +732,7 @@ Read each section file and identify:
 17. Excessive hedging ("may suggest... have the potential to")
 18. Generic positive conclusions ("The future looks bright")
 
-**Japanese papers (日本語)** — 13パターン（A〜C）+ AIボキャブラリー一覧（D）をチェック:
+**Vietnamese papers (Tiếng Việt)** — 13パターン（A〜C）+ AIボキャブラリー一覧（D）をチェック:
 
 A. 記号と表記（3パターン）:
 - emダッシュ、カギ括弧多用、丸括弧補足しすぎ
@@ -757,7 +751,7 @@ C. 学術文特有の問題（7パターン）:
 - C-6 受動態の過剰使用（検討が行われた → 検討した）
 - C-7 非学術的な文体の混入（「参考になれば幸いである」「ポイントは以下の通り」→ 削除）
 
-D. AIボキャブラリー一覧: `references/humanizer-academic.md` の日本語セクションDを参照。C-4のパターン判定に使う語彙リスト。
+D. AIボキャブラリー一覧: `references/humanizer-academic.md` のTiếng ViệtセクションDを参照。C-4のパターン判定に使う語彙リスト。
 
 #### Step 4.2: Rewrite
 
@@ -782,7 +776,7 @@ Consult `references/humanizer-academic.md` for specific before/after examples. F
 | Conclusion | #18 Generic conclusions, #1 Significance inflation |
 | Abstract | ALL patterns (most visible section) |
 
-**日本語:**
+**Tiếng Việt:**
 
 | セクション | 重点パターン |
 |-----------|-------------|
@@ -809,7 +803,7 @@ After humanization:
 - [ ] No generic conclusions remaining
 - [ ] Hedging proportionate to evidence strength
 
-**日本語:**
+**Tiếng Việt:**
 - [ ] 「さらに」「また」「加えて」の連発がない（各セクション最大1回）
 - [ ] 同じ語尾が3回以上続いていない
 - [ ] 根拠なき「非常に」「大きな」がない
@@ -820,7 +814,7 @@ After humanization:
 
 ### Phase 5: References
 
-Read `~/.claude/skills/paper-writer/references/citation-guide.md` with the `Read` tool.
+Read `[workspace]/paper-writer-skill-antigravity/references/citation-guide.md` with the `view_file` tool.
 
 Build `references/09_references.md` (or `references/07_references.md` for Case Reports):
 
@@ -828,11 +822,11 @@ Build `references/09_references.md` (or `references/07_references.md` for Case R
 2. Format according to target journal style captured in Phase 0 (Vancouver, APA, etc.)
 3. Number sequentially as cited
 4. Verify completeness: every reference is cited in text, every citation has a reference entry
-5. **Verify authenticity**: For EVERY AI-suggested reference, confirm the paper exists via `WebSearch` with the exact title. AI frequently fabricates plausible-sounding citations.
+5. **Verify authenticity**: For EVERY AI-suggested reference, confirm the paper exists via `search_web` with the exact title. AI frequently fabricates plausible-sounding citations.
 
 ### Phase 6: Quality Review
 
-Read `~/.claude/skills/paper-writer/references/section-checklist.md` with the `Read` tool. For Case Reports, also check the CARE-specific items in `templates/case-report.md`.
+Read `[workspace]/paper-writer-skill-antigravity/references/section-checklist.md` with the `view_file` tool. For Case Reports, also check the CARE-specific items in `templates/case-report.md`.
 
 Run the quality checklist against each section. Update `checklists/section-quality.md` with results.
 
@@ -852,13 +846,13 @@ Run the quality checklist against each section. Update `checklists/section-quali
 
 ### Phase 7: Pre-Submission
 
-Read `~/.claude/skills/paper-writer/templates/cover-letter.md` and `~/.claude/skills/paper-writer/templates/submission-ready.md` with the `Read` tool.
+Read `[workspace]/paper-writer-skill-antigravity/templates/cover-letter.md` and `[workspace]/paper-writer-skill-antigravity/templates/submission-ready.md` with the `view_file` tool.
 
 Create:
-1. **Title page** — read `~/.claude/skills/paper-writer/templates/title-page.md` for the template (running head, all authors with ORCID, affiliations, word counts, corresponding author, clinical trial registration)
-2. **Highlights / Key Points** — read `~/.claude/skills/paper-writer/templates/highlights.md` and create the appropriate summary box for the target journal (JAMA Key Points, BMJ "What is known", Elsevier Highlights, Lay Summary, etc.)
-3. **Acknowledgments** — read `~/.claude/skills/paper-writer/templates/acknowledgments.md` and draft (non-author contributions, AI tool disclosure, patient acknowledgment)
-4. **Declarations** — read `~/.claude/skills/paper-writer/templates/declarations.md` and complete (Ethics, COI using `references/coi-detailed.md`, Funding, Data Availability, AI Disclosure, CRediT)
+1. **Title page** — read `[workspace]/paper-writer-skill-antigravity/templates/title-page.md` for the template (running head, all authors with ORCID, affiliations, word counts, corresponding author, clinical trial registration)
+2. **Highlights / Key Points** — read `[workspace]/paper-writer-skill-antigravity/templates/highlights.md` and create the appropriate summary box for the target journal (VIMA Key Points, BMJ "What is known", Elsevier Highlights, Lay Summary, etc.)
+3. **Acknowledgments** — read `[workspace]/paper-writer-skill-antigravity/templates/acknowledgments.md` and draft (non-author contributions, AI tool disclosure, patient acknowledgment)
+4. **Declarations** — read `[workspace]/paper-writer-skill-antigravity/templates/declarations.md` and complete (Ethics, COI using `references/coi-detailed.md`, Funding, Data Availability, AI Disclosure, CRediT)
 5. Cover letter using the template
 6. `checklists/submission-ready.md` using the template — fill in journal-specific limits from Phase 0
 7. Compile all sections into a single reading-order Markdown file → `submissions/v1_{journal}/compiled-manuscript.md`
@@ -936,7 +930,7 @@ For each comment, use this format:
 
 ### Phase 9: Post-Acceptance
 
-Read `~/.claude/skills/paper-writer/templates/proof-correction.md` with the `Read` tool.
+Read `[workspace]/paper-writer-skill-antigravity/templates/proof-correction.md` with the `view_file` tool.
 
 After acceptance, the corresponding author receives galley proofs. This is the LAST opportunity to correct errors.
 
@@ -973,7 +967,7 @@ After publication:
 
 ### Phase 10: Rejection & Resubmission
 
-Read `~/.claude/skills/paper-writer/references/desk-rejection-prevention.md` and `references/journal-reformatting.md` with the `Read` tool.
+Read `[workspace]/paper-writer-skill-antigravity/references/desk-rejection-prevention.md` and `references/journal-reformatting.md` with the `view_file` tool.
 
 #### Step 10.1: Assess the Rejection
 
@@ -1023,7 +1017,7 @@ Plan cascade: Reach journal → Target journal → Safety journal → Backup jou
 ### What AI Should NOT Do
 
 - Fabricate data or statistics
-- Invent citations (always verify with `WebSearch`)
+- Invent citations (always verify with `search_web`)
 - Write Results without user-provided data
 - Write Case Presentation without user-provided clinical details
 - Make clinical recommendations beyond the data
@@ -1162,10 +1156,10 @@ When the user invokes this skill on an existing project directory:
 - Follow target journal's style guide
 - Flag awkward phrasing for user review
 
-### Japanese Papers
+### Vietnamese Papers
 - IMRAD形式は英語論文と同じ（Case Reportは例外: CARE形式）
 - 「です・ます」ではなく「である」調
-- 専門用語は原則として日本語（初出時に英語併記）
+- 専門用語は原則としてTiếng Việt（初出時に英語併記）
 - 症例報告では「症例提示」「臨床経過」等の標準的な見出しを使用
 - 論文の書き方ガイドが別途ある場合は参照のこと
 
@@ -1177,13 +1171,13 @@ When the user invokes this skill on an existing project directory:
 
 | エージェント | 役割 | エージェント定義 | モデル |
 |------------|------|----------------|--------|
-| 文献検索 | DB別の並列論文検索 | `~/.claude/agents/paper-lit-searcher.md` | sonnet |
-| 表・図設計 | 表と図の並列設計 | `~/.claude/agents/paper-table-figure-planner.md` | sonnet |
-| セクション執筆 | 汎用セクション執筆 | `~/.claude/agents/paper-section-drafter.md` | sonnet |
-| ヒューマナイザー | AI文体パターン除去 | `~/.claude/agents/paper-humanizer.md` | haiku |
-| 参考文献 | 引用収集・検証 | `~/.claude/agents/paper-ref-builder.md` | sonnet |
-| セクションレビュー | セクション品質チェック | `~/.claude/agents/paper-section-reviewer.md` | sonnet |
-| 品質ゲート | 横断整合性の最終検証 | `~/.claude/agents/paper-quality-gate.md` | opus |
+| 文献検索 | DB別の並列論文検索 | `[workspace]/paper-writer-skill-antigravity/agents/paper-lit-searcher.md` | Gemini 3.1 Pro |
+| 表・図設計 | 表と図の並列設計 | `[workspace]/paper-writer-skill-antigravity/agents/paper-table-figure-planner.md` | Gemini 3.1 Pro |
+| セクション執筆 | 汎用セクション執筆 | `[workspace]/paper-writer-skill-antigravity/agents/paper-section-drafter.md` | Gemini 3.1 Pro |
+| ヒューマナイザー | AI文体パターン除去 | `[workspace]/paper-writer-skill-antigravity/agents/paper-humanizer.md` | Gemini 3.1 Flash |
+| 参考文献 | 引用収集・検証 | `[workspace]/paper-writer-skill-antigravity/agents/paper-ref-builder.md` | Gemini 3.1 Pro |
+| セクションレビュー | セクション品質チェック | `[workspace]/paper-writer-skill-antigravity/agents/paper-section-reviewer.md` | Gemini 3.1 Pro |
+| 品質ゲート | 横断整合性の最終検証 | `[workspace]/paper-writer-skill-antigravity/agents/paper-quality-gate.md` | Gemini 3.1 Pro (High) |
 
 ### Phase別チームワークフロー
 
@@ -1241,7 +1235,7 @@ When the user invokes this skill on an existing project directory:
 `paper-ref-builder` を2段階で実行：
 
 1. **Builder モード**: 全セクションから引用収集→ジャーナル形式でフォーマット
-2. **Verifier モード**: WebSearchで各文献の実在確認→捏造フラグ
+2. **Verifier モード**: search_webで各文献の実在確認→捏造フラグ
 
 #### Phase 6: 品質レビュー（並列 + ゲート）
 
@@ -1308,7 +1302,7 @@ Phase N 完了 → [ゲートエージェント] → PASS? → 次のPhaseへ
 | 3 | セクション | score≥80%、Must Fix=0 | paper-section-reviewer | paper-section-drafter |
 | 4 | ヒューマナイズ | 高優先AIパターン残存0 | paper-section-reviewer | paper-humanizer |
 | 5 | 参考文献 | 捏造0、孤立引用0 | paper-ref-builder(verifier) | paper-ref-builder(builder) |
-| 6 | 横断整合 | PASS or CONDITIONAL_PASS | paper-quality-gate(opus) | paper-section-drafter |
+| 6 | 横断整合 | PASS or CONDITIONAL_PASS | paper-quality-gate(Gemini 3.1 Pro (High)) | paper-section-drafter |
 | 7 | 投稿準備 | 全必須書類あり、語数制限内 | paper-section-reviewer | paper-section-drafter |
 
 #### フィードバックファイル形式
@@ -1341,7 +1335,7 @@ gate_verdict: FAIL
 ## Context (変更不可)
 - reporting_guideline: {PRISMA等}
 - journal: {ジャーナル名}
-- language: {English/Japanese}
+- language: {English/Vietnamese}
 ```
 
 #### 修正エージェントの起動方法
@@ -1438,14 +1432,14 @@ Abstract のゲートは全セクション PASS 後に実行（他セクショ�
 - `references/citation-verification.md` - Citation authenticity verification guide
 - `references/pubmed-query-builder.md` - PubMed search query construction guide
 - `templates/title-page.md` - Title page template (running head, ORCID, affiliations)
-- `templates/highlights.md` - Key Points / Highlights / Summary boxes (JAMA, BMJ, Elsevier, etc.)
+- `templates/highlights.md` - Key Points / Highlights / Summary boxes (VIMA, BMJ, Elsevier, etc.)
 - `templates/limitations-guide.md` - Limitations section writing guide with templates
 - `templates/acknowledgments.md` - Acknowledgments template (AI tools, medical writing)
 - `templates/proof-correction.md` - Post-acceptance proof correction guide
 - `references/submission-portals.md` - Submission portal guide (ScholarOne, Editorial Manager, etc.)
 - `references/open-access-guide.md` - Open Access models, APCs, preprints, funder mandates
 - `references/clinical-trial-registration.md` - Clinical trial registration guide (ClinicalTrials.gov, UMIN-CTR, jRCT)
-- `references/abstract-formats.md` - Journal-specific abstract formats (JAMA, NEJM, Lancet, BMJ, etc.)
+- `references/abstract-formats.md` - Journal-specific abstract formats (VIMA, NEJM, Lancet, BMJ, etc.)
 - `references/word-count-limits.md` - Word count limits by journal and paper type
 - `references/coi-detailed.md` - Detailed COI categories, CRediT taxonomy, ORCID guide
 - `references/desk-rejection-prevention.md` - Desk rejection prevention and journal selection
@@ -1457,3 +1451,5 @@ Abstract のゲートは全セクション PASS 後に実行（他セクショ�
 - `templates/analysis-workflow.md` - Data analysis workflow guide (Table 1, regression, survival, figures)
 - `scripts/table1.py` - Table 1 generator (auto-detect variable types, normality test, group comparison)
 - `scripts/analysis-template.py` - Statistical analysis template (descriptive, t-test, logistic, survival)
+
+

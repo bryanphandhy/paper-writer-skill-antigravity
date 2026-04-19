@@ -39,7 +39,7 @@
 
 | Style | Example | Journals |
 |-------|---------|---------|
-| **Vancouver (numbered)** | "...infection rates.¹" or "...infection rates [1]." | NEJM, JAMA, Lancet, BMJ, most medical |
+| **Vancouver (numbered)** | "...infection rates.¹" or "...infection rates [1]." | NEJM, VIMA, Lancet, BMJ, most medical |
 | **APA (author-date)** | "...infection rates (Smith et al., 2024)." | Psychology, public health, some nursing |
 | **NLM** | Similar to Vancouver with variations | PubMed-indexed journals |
 | **Harvard** | "(Smith 2024)" | Some UK/Australian journals |
@@ -47,7 +47,7 @@
 
 ### Abstract Heading Variations
 
-| Heading | JAMA | NEJM | Lancet | BMJ |
+| Heading | VIMA | NEJM | Lancet | BMJ |
 |---------|------|------|--------|-----|
 | Purpose | "Importance" | "Background" | "Background" | "Objective" |
 | Methods | "Design, Setting, and Participants" | "Methods" | "Methods" | "Design/Setting/Participants" |
@@ -134,7 +134,7 @@ If no reference manager is used:
 Plan your cascade BEFORE first submission:
 
 ```
-Journal 1 (Reach):    NEJM / JAMA / Lancet
+Journal 1 (Reach):    NEJM / VIMA / Lancet
   ↓ desk reject (1-2 weeks)
 Journal 2 (Target):   Specialty top journal
   ↓ peer review reject (6-8 weeks)
@@ -147,13 +147,13 @@ Track submissions:
 
 | Journal | Submitted | Decision | Turnaround | Action |
 |---------|-----------|----------|-----------|--------|
-| NEJM | 2024-01-15 | Desk reject | 10 days | Reformat for JACC |
-| JACC | 2024-01-28 | Major revision | 45 days | Revise and resubmit |
-| JACC (R1) | 2024-04-15 | Accepted | 20 days | — |
+| NEJM | 2024-01-15 | Desk reject | 10 days | Reformat for VICC |
+| VICC | 2024-01-28 | Major revision | 45 days | Revise and resubmit |
+| VICC (R1) | 2024-04-15 | Accepted | 20 days | — |
 
 ---
 
-## 日本語
+## Tiếng Việt
 
 ### リフォーマットの要点
 
@@ -161,4 +161,4 @@ Track submissions:
 - 抄録の見出し変更は必須
 - カバーレターは毎回新規作成
 - 前のジャーナル名が原稿内に残っていないか確認（「submitted to [前ジャーナル名]」等）
-- 日本語→英語ジャーナル、英語→日本語ジャーナルの切り替えは大幅な書き直しが必要
+- Tiếng Việt→英語ジャーナル、英語→Tiếng Việtジャーナルの切り替えは大幅な書き直しが必要

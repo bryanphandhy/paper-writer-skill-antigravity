@@ -73,7 +73,7 @@ DISCLAIMERS:
 | Journal | Max Characters | Notes |
 |---------|--------------|-------|
 | NEJM | 50 | Typically auto-generated |
-| JAMA | 40 | Required on title page |
+| VIMA | 40 | Required on title page |
 | The Lancet | Not required | |
 | BMJ | 50 | Short title required |
 | Most Elsevier | 50 | Running title field in portal |
@@ -90,13 +90,13 @@ For double-blind journals, prepare two versions:
 
 ---
 
-## 日本語テンプレート
+## Tiếng Việtテンプレート
 
 ```
 【論文種別】原著論文 / 症例報告 / 総説 / レター
 
 【題名】
-[日本語タイトル]
+[Tiếng Việtタイトル]
 [English title]
 
 【短縮タイトル】
@@ -126,7 +126,7 @@ TEL: [電話番号]
 - 図: [N]
 
 【キーワード】
-[キーワード1]; [キーワード2]; [キーワード3]（日本語・英語併記が望ましい）
+[キーワード1]; [キーワード2]; [キーワード3]（Tiếng Việt・英語併記が望ましい）
 
 【臨床試験登録】
 [UMIN-CTR / jRCT: 登録番号]

@@ -1,4 +1,4 @@
-# Data Management Template
+﻿# Data Management Template
 
 ## Data Directory Structure
 
@@ -179,7 +179,7 @@ Examples:
 ```
 
 Rules:
-- Lowercase, underscores (no spaces, no Japanese characters in filenames)
+- Lowercase, underscores (no spaces, no Vietnamese characters in filenames)
 - Version suffix for files that may be updated (`_v1`, `_v2`)
 - Date suffix for snapshots (`_20260217`)
 - Keep extensions consistent (`.csv` for tabular data, `.xlsx` only when formulas needed)
@@ -206,3 +206,4 @@ data/analysis/*.pdf
 data/analysis/*.png
 data/analysis/*.tiff
 ```
+

@@ -226,7 +226,7 @@ We appreciate this suggestion and have added a new paragraph discussing clinical
 
 ---
 
-## 日本語セクション：査読者への回答テンプレート
+## Tiếng Việtセクション：査読者への回答テンプレート
 
 ### 基本フォーマット
 
@@ -266,7 +266,7 @@ We appreciate this suggestion and have added a new paragraph discussing clinical
 
 ---
 
-### 回答のポイント（日本語論文の場合）
+### 回答のポイント（Tiếng Việt論文の場合）
 
 1. **敬語を適切に使用する** -- 査読者は「先生」として扱う
 2. **「ご指摘のとおり」から始める** -- 同意できる場合はまずそこから
@@ -274,7 +274,7 @@ We appreciate this suggestion and have added a new paragraph discussing clinical
 4. **反論する場合も丁寧に** -- 「ご指摘は大変重要ですが、以下の理由により...」
 5. **追加解析を行った場合は結果を明示する**
 
-### よくある査読コメントへの回答例（日本語）
+### よくある査読コメントへの回答例（Tiếng Việt）
 
 #### 症例数が少ないという指摘
 

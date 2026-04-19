@@ -1,4 +1,4 @@
-# Data Analysis Workflow
+﻿# Data Analysis Workflow
 
 ## Overview
 
@@ -8,7 +8,7 @@ Data analysis follows the data directory flow:
 data/raw/ → data/processed/ → data/analysis/ → tables/ + figures/
 ```
 
-Claude Code executes Python scripts directly. All analysis output goes to `data/analysis/`.
+Antigravity executes Python scripts directly. All analysis output goes to `data/analysis/`.
 
 ## Available Scripts
 
@@ -183,3 +183,4 @@ Before writing Results, confirm:
 - [ ] Sample size justification provided (if applicable)
 
 See `references/statistical-reporting-full.md` for detailed SAMPL guidelines.
+

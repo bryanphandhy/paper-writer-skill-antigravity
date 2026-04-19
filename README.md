@@ -1,8 +1,8 @@
-# Paper Writer Skill
+﻿# Paper Writer Skill
 
-A Claude Code skill for medical/scientific paper writing. Covers the entire manuscript lifecycle from literature search to submission, peer review response, and rejection handling.
+A Antigravity skill for medical/scientific paper writing. Covers the entire manuscript lifecycle from literature search to submission, peer review response, and rejection handling.
 
-> **日本語版はこちら → [README.ja.md](README.ja.md)**
+> **Tiếng Việt版はこちら → [README.vi.md](README.vi.md)**
 
 ## Overview
 
@@ -99,7 +99,7 @@ flowchart TB
 
     subgraph P6["Phase 6 — Quality Review"]
         R1[Section Reviewer ×N]
-        R2[Quality Gate — opus]
+        R2[Quality Gate — Gemini 3.1 Pro (High)]
     end
 
     L1 & L2 & L3 --> MERGE["Merge Matrix"]
@@ -111,13 +111,13 @@ flowchart TB
 
 | Agent | Role | Model |
 |-------|------|-------|
-| `paper-lit-searcher` | Database-specific literature search | sonnet |
-| `paper-table-figure-planner` | Table and figure design | sonnet |
-| `paper-section-drafter` | Section drafting (parameterized) | sonnet |
-| `paper-humanizer` | AI writing pattern removal | haiku |
-| `paper-ref-builder` | Citation collection and verification | sonnet |
-| `paper-section-reviewer` | Per-section quality check | sonnet |
-| `paper-quality-gate` | Cross-section consistency + final verdict | opus |
+| `paper-lit-searcher` | Database-specific literature search | Gemini 3.1 Pro |
+| `paper-table-figure-planner` | Table and figure design | Gemini 3.1 Pro |
+| `paper-section-drafter` | Section drafting (parameterized) | Gemini 3.1 Pro |
+| `paper-humanizer` | AI writing pattern removal | Gemini 3.1 Flash |
+| `paper-ref-builder` | Citation collection and verification | Gemini 3.1 Pro |
+| `paper-section-reviewer` | Per-section quality check | Gemini 3.1 Pro |
+| `paper-quality-gate` | Cross-section consistency + final verdict | Gemini 3.1 Pro (High) |
 
 ## Supported Paper Types
 
@@ -132,10 +132,10 @@ flowchart TB
 
 ## Usage
 
-### Invoke from Claude Code
+### Invoke from Antigravity
 
 ```
-/paper-writer
+@antigravity write paper
 ```
 
 Or use natural language triggers:
@@ -149,7 +149,7 @@ The skill prompts you for:
 1. **Working title**
 2. **Paper type** (one of the 6 types above)
 3. **Target journal** (optional, recommended)
-4. **Language** (English / Japanese / Both)
+4. **Language** (English / Vietnamese / Both)
 5. **Research question** (one sentence)
 6. **Available data** (existing tables/figures)
 
@@ -196,7 +196,7 @@ paper-writer/
 ├── SKILL.md                           # Main workflow definition
 ├── CHANGELOG.md                       # Version history
 ├── README.md                          # This file
-├── README.ja.md                       # Japanese documentation
+├── README.vi.md                       # Vietnamese documentation
 │
 ├── templates/                         # 31 files — Section templates
 │   ├── project-init.md                # Project initialization (Original Article)
@@ -225,7 +225,7 @@ paper-writer/
 │   ├── declarations.md                # Declarations (ethics, COI, funding, AI disclosure)
 │   ├── graphical-abstract.md          # Graphical abstract guide
 │   ├── title-page.md                  # Title page template
-│   ├── highlights.md                  # Key points / highlights (JAMA, BMJ, etc.)
+│   ├── highlights.md                  # Key points / highlights (VIMA, BMJ, etc.)
 │   ├── limitations-guide.md           # Limitations section guide
 │   ├── acknowledgments.md             # Acknowledgments template
 │   ├── proof-correction.md            # Post-acceptance proof correction guide
@@ -250,7 +250,7 @@ paper-writer/
 │   ├── tables-figures-guide.md        # Tables and figures creation guide
 │   ├── keywords-guide.md              # Keywords and MeSH selection strategy
 │   ├── supplementary-materials.md     # Supplementary materials strategy
-│   ├── hook-compatibility.md          # Claude Code hook compatibility
+│   ├── hook-compatibility.md          # Antigravity hook compatibility
 │   ├── submission-portals.md          # Submission portal guide
 │   ├── open-access-guide.md           # OA models, APCs, CC licenses
 │   ├── clinical-trial-registration.md # Clinical trial registration guide
@@ -297,14 +297,14 @@ CONSORT 2025, STROBE, PRISMA 2020, CARE, STARD 2015, SQUIRE 2.0, SPIRIT 2025, TR
 | Language | Coverage |
 |----------|----------|
 | **English** | All templates and guides, 18 AI writing detection patterns |
-| **Japanese** | All templates bilingual (EN/JP), 13 AI writing detection patterns, である-style |
+| **Vietnamese** | All templates bilingual (EN/VI), 13 AI writing detection patterns, である-style |
 
 ## AI Writing Detection (Humanizer)
 
 A dedicated phase (Phase 4) to remove AI-generated writing patterns from academic manuscripts.
 
 - **English**: 18 patterns (significance inflation, AI vocabulary, filler phrases, etc.)
-- **Japanese**: 13 patterns (symbol overuse, rhythm monotony, academic-specific issues)
+- **Vietnamese**: 13 patterns (symbol overuse, rhythm monotony, academic-specific issues)
 - Section-specific priority patterns
 - Before/after examples included
 
@@ -324,33 +324,22 @@ A dedicated phase (Phase 4) to remove AI-generated writing patterns from academi
 10. Writing Support (editing services, etc.)
 11. Figure/Table Tools (BioRender, GraphPad, etc.)
 12. Journal Author Instructions (major journals)
-13. Japanese Resources (Ichushi, CiNii, etc.)
+13. Vietnamese Resources (Ichushi, CiNii, etc.)
 
 ## Installation
 
-Clone this repository into the Claude Code skills directory:
+Clone this repository into your Antigravity workspace:
 
 ```bash
-git clone https://github.com/kgraph57/paper-writer-skill.git ~/.claude/skills/paper-writer
+git clone https://github.com/bryanphandhy/paper-writer-skill-antigravity.git
 ```
 
-Register the skill in Claude Code settings:
-
-```json
-// Add to "skills" in ~/.claude/settings.json
-{
-  "skills": {
-    "paper-writer": {
-      "path": "~/.claude/skills/paper-writer"
-    }
-  }
-}
-```
+This skill relies on Antigravity's workspace capabilities. Once cloned, Antigravity will automatically be able to read and utilize the `SKILL.md` workflow when you ask it to help write a paper.
 
 ## Requirements
 
-- [Claude Code](https://claude.ai/code) CLI
-- WebSearch / WebFetch (used for literature search)
+- [Antigravity](https://gemini.ai/code) CLI
+- search_web / read_url_content (used for literature search)
 - Python 3 + numpy, pandas, scipy, statsmodels, lifelines, matplotlib (for data analysis scripts)
 
 ## License
@@ -367,3 +356,5 @@ Private repository.
 - **v1.0.0** (2026-02-17) — Structural improvements, 6 new files, 5 paper types
 
 See [CHANGELOG.md](CHANGELOG.md) for details.
+
+

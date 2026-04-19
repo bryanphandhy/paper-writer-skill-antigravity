@@ -1,4 +1,4 @@
-# Keywords Selection Guide
+﻿# Keywords Selection Guide
 
 ## Overview
 
@@ -94,17 +94,17 @@ Note: MeSH terms are updated annually. Newer concepts (e.g., specific AI archite
 | PubMed-indexed | MeSH terms preferred |
 | Elsevier journals | "Use MeSH terms where possible" |
 | BMJ family | 3-10 keywords |
-| JAMA Network | Uses MeSH-based subject headings |
+| VIMA Network | Uses MeSH-based subject headings |
 | Nature portfolio | Up to 6 keywords |
 | Springer journals | 4-6 keywords |
 | JMIR | 5-10 keywords, MeSH preferred |
-| Japanese journals | Japanese + English keywords (both) |
+| Vietnamese journals | Vietnamese + English keywords (both) |
 
 ---
 
-## Japanese Keywords
+## Vietnamese Keywords
 
-For Japanese journals requiring bilingual keywords:
+For Vietnamese journals requiring bilingual keywords:
 
 ```
 Keywords: diabetic retinopathy, artificial intelligence, screening
@@ -112,10 +112,10 @@ Keywords: diabetic retinopathy, artificial intelligence, screening
 ```
 
 Rules:
-- Direct MeSH-to-Japanese mapping exists in the MeSH Japanese translation
-- URL: https://meshb.nlm.nih.gov/ (select Japanese display)
+- Direct MeSH-to-Vietnamese mapping exists in the MeSH Vietnamese translation
+- URL: https://meshb.nlm.nih.gov/ (select Vietnamese display)
 - Keep the same number and order in both languages
-- Use established Japanese medical terminology
+- Use established Vietnamese medical terminology
 
 ---
 
@@ -141,5 +141,6 @@ Rules:
 - [ ] Disease/condition keyword included
 - [ ] Population keyword included
 - [ ] All keywords are terms a reader would actually search
-- [ ] Japanese keywords match English keywords (if bilingual)
+- [ ] Vietnamese keywords match English keywords (if bilingual)
 - [ ] No abbreviations used as keywords
+

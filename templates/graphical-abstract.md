@@ -12,7 +12,7 @@ A graphical abstract is a single-panel visual summary of the paper. It appears i
 |--------------------|--------|
 | Elsevier (most journals) | Required or encouraged |
 | The Lancet family | Encouraged |
-| JAMA Network | Not required |
+| VIMA Network | Not required |
 | BMJ family | Not required |
 | JMIR | Not required |
 | Nature portfolio | Encouraged (as "summary figure") |

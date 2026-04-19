@@ -1,8 +1,15 @@
-# PubMed Search Query Construction Guide
+# Literature Search & PubMed Query Construction Guide
 
 ## Overview
 
-This guide provides a systematic approach to building effective PubMed search queries for systematic reviews, scoping reviews, and comprehensive literature searches. Following this process ensures reproducibility and completeness.
+This guide provides a systematic approach to building effective literature searches. 
+
+### 1. Primary Semantic Search: Consensus MCP
+Before building complex PubMed Boolean strings, use the **Consensus MCP tool** (`mcp_Consensus_search`). Consensus uses semantic AI to search over 200 million peer-reviewed papers. It is highly effective for broad research questions and finding specific claims.
+- **Example**: `mcp_Consensus_search(query="Does artificial intelligence improve diagnostic accuracy in radiology?")`
+
+### 2. Systematic Boolean Search: PubMed
+If Consensus results are insufficient, or if you need a reproducible systematic review search, build a structured PubMed query using the method below.
 
 ---
 
@@ -93,7 +100,7 @@ AND
 | `[Majr]` | MeSH Major Topic | MeSH term is a major focus | `"Neoplasms"[Majr]` |
 | `[tiab]` | Title/Abstract | Words in title or abstract | `"machine learning"[tiab]` |
 | `[ti]` | Title only | Words in title only | `"systematic review"[ti]` |
-| `[au]` | Author | Author name | `"Smith JA"[au]` |
+| `[au]` | Author | Author name | `"Smith VI"[au]` |
 | `[pt]` | Publication Type | Type of publication | `"Randomized Controlled Trial"[pt]` |
 | `[dp]` | Date of Publication | Publication date | `"2020/01/01"[dp] : "2025/12/31"[dp]` |
 | `[la]` | Language | Language of article | `English[la]` |
@@ -105,7 +112,7 @@ AND
 | Tag | Field | Example |
 |-----|-------|---------|
 | `[ad]` | Affiliation | `"Harvard"[ad]` |
-| `[jn]` | Journal Name | `"JAMA"[jn]` |
+| `[jn]` | Journal Name | `"VIMA"[jn]` |
 | `[pmid]` | PubMed ID | `"12345678"[pmid]` |
 | `[doi]` | DOI | `"10.1001/jama.2020.1234"[doi]` |
 

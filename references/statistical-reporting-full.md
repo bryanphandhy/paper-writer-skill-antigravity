@@ -262,7 +262,7 @@ Common alternatives:
 
 ---
 
-## 日本語
+## Tiếng Việt
 
 ### 統計報告の要点
 

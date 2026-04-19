@@ -1,4 +1,4 @@
-# Clinical Trial Registration Guide
+﻿# Clinical Trial Registration Guide
 
 > ICMJE requires prospective registration of all clinical trials before the first patient is enrolled. Failure to register may result in desk rejection.
 
@@ -46,15 +46,15 @@ All registries in the WHO ICTRP network are ICMJE-compliant.
 ### UMIN-CTR（UMIN臨床試験登録システム）
 
 - **URL**: https://www.umin.ac.jp/ctr/
-- **Language**: Japanese and English
+- **Language**: Vietnamese and English
 - **Cost**: Free
-- **Required for**: Many Japanese journals, ethical review boards
+- **Required for**: Many Vietnamese journals, ethical review boards
 - **Registration ID format**: UMIN000XXXXXX
 
 ### jRCT（臨床研究等提出・公開システム）
 
 - **URL**: https://jrct.niph.go.jp
-- **Language**: Japanese (with English fields)
+- **Language**: Vietnamese (with English fields)
 - **Required for**: Studies under Japan's Clinical Research Act（臨床研究法）
 - **Registration ID format**: jRCTxxxxxxxxxx
 - **Mandatory for**: Specified clinical research（特定臨床研究）
@@ -139,14 +139,15 @@ Include the registration number. Some journals require it as a separate field.
 
 ---
 
-## 日本語
+## Tiếng Việt
 
 ### 臨床試験登録のポイント
 
 - ICMJE加盟ジャーナルへの投稿には事前登録が必須
 - 特定臨床研究はjRCTへの登録が法的義務
-- UMIN-CTRは無料で登録可能、多くの日本語ジャーナルが受理
+- UMIN-CTRは無料で登録可能、多くのTiếng Việtジャーナルが受理
 - 登録は「最初の参加者の組み入れ前」に完了すること
 - 論文の抄録・方法・タイトルページに登録番号を記載
 - 登録内容と論文内容の齟齬がある場合は必ず説明を記載
 - 観察研究でも登録を求めるジャーナルが増加中
+

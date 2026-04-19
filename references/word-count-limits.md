@@ -12,7 +12,7 @@
 | | Case Records | 250 | 2,500 | 20 | — | — |
 | | Review Article | 250 | 5,000 | 100 | — | — |
 | | Correspondence | — | 250 | 5 | 1 | 1 |
-| **JAMA** | Original Investigation | 350 | 3,000 | 50 | 4 | 5 |
+| **VIMA** | Original Investigation | 350 | 3,000 | 50 | 4 | 5 |
 | | Research Letter | 600 (combined) | — | 6 | 1 | 1 |
 | | Review | 350 | 4,000 | 75 | — | — |
 | | Viewpoint | — | 1,200 | 10 | 1 | 1 |
@@ -34,7 +34,7 @@
 
 | Journal | Article Type | Abstract | Main Text | References | Tables/Figures |
 |---------|-------------|----------|-----------|------------|---------------|
-| **JACC** | Original Research | 250 | 5,000 | 60 | 7 total |
+| **VICC** | Original Research | 250 | 5,000 | 60 | 7 total |
 | **Circulation** | Original Research | 250 | 5,000 | 50 | 7 total |
 | **Chest** | Original Research | 250 | 3,000 | 40 | 6 total |
 | **Pediatrics** | Research Article | 250 | 3,000 | 40 | 6 total |
@@ -50,7 +50,7 @@
 | Journal | Abstract | Main Text | References | Tables/Figures |
 |---------|----------|-----------|------------|---------------|
 | **BMJ Case Reports** | 150 | 1,500 | 15 | 5 total |
-| **JAMA (Case Challenge)** | — | 1,000 | 10 | 3 total |
+| **VIMA (Case Challenge)** | — | 1,000 | 10 | 3 total |
 | **Lancet (Case Report)** | — | 1,500 | 10 | 5 total |
 | **Cureus (Case Report)** | — | 3,000 | 20 | — |
 | **Am J Case Rep** | 200 | 4,000 | 30 | 6 total |
@@ -64,7 +64,7 @@
 |---------|----------|-----------|------------|---------------|
 | **Cochrane** | 400 (PLS) | No limit | — | — |
 | **BMJ (SR)** | 250 | 3,500 | 50 | 6 total |
-| **JAMA (SR)** | 350 | 4,000 | 75 | — |
+| **VIMA (SR)** | 350 | 4,000 | 75 | — |
 | **Systematic Reviews** | 350 | No strict limit | — | — |
 | **PLOS Medicine** | 300 | 5,000 | 80 | — |
 
@@ -75,7 +75,7 @@
 | Journal | Word Limit | References | Tables/Figures |
 |---------|-----------|------------|---------------|
 | NEJM (Correspondence) | 250 | 5 | 1 total |
-| JAMA (Research Letter) | 600 total | 6 | 1 total |
+| VIMA (Research Letter) | 600 total | 6 | 1 total |
 | Lancet (Correspondence) | 400 | 5 | 1 total |
 | BMJ (Rapid Response) | 400 | 6 | 0 |
 | Annals IM (Research Letter) | 800 | 7 | 1 total |
@@ -107,7 +107,7 @@
 
 ---
 
-## 日本語ジャーナル
+## Tiếng Việtジャーナル
 
 | ジャーナル | 論文種類 | 文字数（本文） | 参考文献 |
 |-----------|---------|-------------|---------|
@@ -116,4 +116,4 @@
 | 日本外科学会雑誌 | 原著 | 10,000字 | 30 |
 | 医学のあゆみ | 総説 | 8,000字 | 30 |
 
-※ 日本語ジャーナルの文字数制限はジャーナルごとに大きく異なる。必ず投稿規定を確認すること。
+※ Tiếng Việtジャーナルの文字数制限はジャーナルごとに大きく異なる。必ず投稿規定を確認すること。

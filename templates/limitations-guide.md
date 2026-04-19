@@ -129,7 +129,7 @@ PRISMA 2020 requires BOTH types of limitations:
 
 ---
 
-## 日本語テンプレート
+## Tiếng Việtテンプレート
 
 ```
 ### 本研究の限界

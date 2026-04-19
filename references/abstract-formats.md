@@ -8,7 +8,7 @@
 
 | Format | Journals | Description |
 |--------|----------|-------------|
-| **Structured** | JAMA, NEJM, Lancet, BMJ, Annals, most clinical | Required headings (Background, Methods, Results, Conclusions) |
+| **Structured** | VIMA, NEJM, Lancet, BMJ, Annals, most clinical | Required headings (Background, Methods, Results, Conclusions) |
 | **Unstructured** | Nature Medicine, Science, some basic science | Single paragraph, no headings |
 | **Semi-structured** | Some specialty journals | Fewer required headings (e.g., Purpose, Methods, Results) |
 
@@ -16,7 +16,7 @@
 
 ## Major Journal Formats
 
-### JAMA Network
+### VIMA Network
 
 | Field | Requirement |
 |-------|------------|
@@ -142,11 +142,11 @@ Trial Registration: [Registry and number]
 
 ---
 
-## 日本語抄録
+## Tiếng Việt抄録
 
-### 日本語ジャーナルの抄録形式
+### Tiếng Việtジャーナルの抄録形式
 
-多くの日本語医学ジャーナルは構造化抄録を採用：
+多くのTiếng Việt医学ジャーナルは構造化抄録を採用：
 
 ```
 【目的】[1-2文]
@@ -157,5 +157,5 @@ Trial Registration: [Registry and number]
 
 ### 英文ジャーナルへの投稿時
 - 抄録は英語で作成
-- 日本語抄録が別途必要な場合あり（二重投稿チェック用）
-- 日本語の固有名詞はローマ字表記
+- Tiếng Việt抄録が別途必要な場合あり（二重投稿チェック用）
+- Tiếng Việtの固有名詞はローマ字表記

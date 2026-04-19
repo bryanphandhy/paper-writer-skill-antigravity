@@ -1,4 +1,4 @@
-# Changelog
+﻿# Changelog
 
 ## [3.2.0] - 2026-03-05
 
@@ -36,7 +36,7 @@ Comprehensive directory restructuring for managing the full research lifecycle f
 
 ### README Updates
 
-- Added "Generated Project Structure (v3.2)" section to both README.md and README.ja.md
+- Added "Generated Project Structure (v3.2)" section to both README.md and README.vi.md
 
 ---
 
@@ -56,7 +56,7 @@ Added autonomous quality loop: each phase has a gate that blocks progress until 
 | 3 | Section draft | Score ≥80%, Must Fix = 0 | section-reviewer | section-drafter |
 | 4 | Humanize | High-priority AI patterns = 0 | section-reviewer | humanizer |
 | 5 | References | Fabrication = 0, orphan citations = 0 | ref-builder (verifier) | ref-builder (builder) |
-| 6 | Cross-section | PASS or CONDITIONAL_PASS | quality-gate (opus) | section-drafter |
+| 6 | Cross-section | PASS or CONDITIONAL_PASS | quality-gate (Gemini 3.1 Pro (High)) | section-drafter |
 | 7 | Submission prep | All required documents, word count OK | section-reviewer | section-drafter |
 
 ### Agent Modifications (6 files)
@@ -86,13 +86,13 @@ Added 7-agent team architecture for parallel execution across all phases. Invoke
 
 | Agent | Role | Model |
 |-------|------|-------|
-| `paper-lit-searcher` | Database-specific literature search (PubMed, Scholar, CiNii, etc.) | sonnet |
-| `paper-table-figure-planner` | Table and figure design from outline and data | sonnet |
-| `paper-section-drafter` | Generic section drafting (parameterized per section) | sonnet |
-| `paper-humanizer` | AI writing pattern detection and removal | haiku |
-| `paper-ref-builder` | Citation collection (builder mode) and verification (verifier mode) | sonnet |
-| `paper-section-reviewer` | Per-section quality check against section-checklist | sonnet |
-| `paper-quality-gate` | Cross-section consistency verification and final PASS/FAIL gate | opus |
+| `paper-lit-searcher` | Database-specific literature search (PubMed, Scholar, CiNii, etc.) | Gemini 3.1 Pro |
+| `paper-table-figure-planner` | Table and figure design from outline and data | Gemini 3.1 Pro |
+| `paper-section-drafter` | Generic section drafting (parameterized per section) | Gemini 3.1 Pro |
+| `paper-humanizer` | AI writing pattern detection and removal | Gemini 3.1 Flash |
+| `paper-ref-builder` | Citation collection (builder mode) and verification (verifier mode) | Gemini 3.1 Pro |
+| `paper-section-reviewer` | Per-section quality check against section-checklist | Gemini 3.1 Pro |
+| `paper-quality-gate` | Cross-section consistency verification and final PASS/FAIL gate | Gemini 3.1 Pro (High) |
 
 ### SKILL.md Updates
 
@@ -102,16 +102,16 @@ Added 7-agent team architecture for parallel execution across all phases. Invoke
 | **Phase 1 team** | 3 parallel literature searchers (PubMed, Scholar, domain DB) |
 | **Phase 2.5 team** | 2 parallel planners (tables + figures) |
 | **Phase 3 team** | Grouped parallel drafting by dependency (Methods+Results pair, Intro+Conclusion pair, etc.) |
-| **Phase 4 team** | Up to 6 parallel humanizers (one per section, haiku model) |
-| **Phase 6 team** | Parallel section reviewers + opus-level cross-section quality gate |
+| **Phase 4 team** | Up to 6 parallel humanizers (one per section, Gemini 3.1 Flash model) |
+| **Phase 6 team** | Parallel section reviewers + Gemini 3.1 Pro (High)-level cross-section quality gate |
 | **Phase 7 team** | 4 parallel submission document assemblers |
 | **Phase 8 team** | 3 parallel revision handlers (Must Fix, Should Fix, Rebuttal) |
 
 ### Summary
 
-- **7 agent definitions** installed to `~/.claude/agents/paper-*.md`
+- **7 agent definitions** installed to `[workspace]/paper-writer-skill-antigravity/agents/paper-*.md`
 - **Backup** at `Project/skills/agents/paper-team/`
-- **Model strategy**: haiku for pattern-matching (humanizer), sonnet for most work, opus for critical review (quality gate)
+- **Model strategy**: Gemini 3.1 Flash for pattern-matching (humanizer), Gemini 3.1 Pro for most work, Gemini 3.1 Pro (High) for critical review (quality gate)
 - **Paper-type specific parallelization**: Original Article, Case Report, and Systematic Review each have optimized parallel drafting rounds
 
 ---
@@ -142,7 +142,7 @@ Added research data management and statistical analysis capabilities to the pape
 
 ### Summary
 
-- **66 files** total (31 templates, 27 references, 5 scripts, + SKILL.md, CHANGELOG.md, README.md, README.ja.md)
+- **66 files** total (31 templates, 27 references, 5 scripts, + SKILL.md, CHANGELOG.md, README.md, README.vi.md)
 - **Data pipeline**: raw/ → processed/ → analysis/ → tables/ + figures/
 - **Analysis types**: Table 1, descriptive stats, t-test, logistic regression, survival analysis, forest plot
 - **Python packages**: numpy, pandas, scipy, statsmodels, lifelines, matplotlib, seaborn
@@ -161,10 +161,10 @@ Exhaustive testing across all paper types and journal requirements identified 30
 
 | File | Description |
 |------|-------------|
-| `templates/title-page.md` | Title page template with running head, ORCID, affiliations, word counts, clinical trial registration (EN/JP) |
-| `templates/highlights.md` | Key Points (JAMA), "What is known" (BMJ), Highlights (Elsevier), Lay Summary, PNAS Significance (EN/JP) |
-| `templates/limitations-guide.md` | Limitations section guide with 4 categories, direction-of-bias templates, SR two-part format (EN/JP) |
-| `templates/acknowledgments.md` | Acknowledgments template (AI tools, medical writing, patient acknowledgment, EN/JP) |
+| `templates/title-page.md` | Title page template with running head, ORCID, affiliations, word counts, clinical trial registration (EN/VI) |
+| `templates/highlights.md` | Key Points (VIMA), "What is known" (BMJ), Highlights (Elsevier), Lay Summary, PNAS Significance (EN/VI) |
+| `templates/limitations-guide.md` | Limitations section guide with 4 categories, direction-of-bias templates, SR two-part format (EN/VI) |
+| `templates/acknowledgments.md` | Acknowledgments template (AI tools, medical writing, patient acknowledgment, EN/VI) |
 | `templates/proof-correction.md` | Post-acceptance proof correction guide (24-72hr timeline, checklists, proofing systems) |
 
 **References (11):**
@@ -172,9 +172,9 @@ Exhaustive testing across all paper types and journal requirements identified 30
 | File | Description |
 |------|-------------|
 | `references/submission-portals.md` | Submission portal guide (ScholarOne, Editorial Manager, eJournalPress, OJS, common errors) |
-| `references/open-access-guide.md` | OA models, APCs by journal, CC licenses, preprint servers, funder mandates (EN/JP) |
+| `references/open-access-guide.md` | OA models, APCs by journal, CC licenses, preprint servers, funder mandates (EN/VI) |
 | `references/clinical-trial-registration.md` | Registration guide (ClinicalTrials.gov, UMIN-CTR, jRCT, WHO dataset, timing rules) |
-| `references/abstract-formats.md` | Journal-specific abstract formats (JAMA, NEJM, Lancet, BMJ, Annals, Nature Med, PLOS Med) |
+| `references/abstract-formats.md` | Journal-specific abstract formats (VIMA, NEJM, Lancet, BMJ, Annals, Nature Med, PLOS Med) |
 | `references/word-count-limits.md` | Word count limits by journal (general, specialty, case reports, SRs, letters, JP journals) |
 | `references/coi-detailed.md` | Detailed COI categories (financial/personal/institutional), CRediT taxonomy, ORCID guide |
 | `references/desk-rejection-prevention.md` | 8 common desk rejection reasons, self-check, journal selection strategy |
@@ -218,11 +218,11 @@ Full review and structural enhancement of the paper-writer skill based on experi
 
 | File | Description |
 |------|-------------|
-| `references/ai-disclosure.md` | ICMJE 2023 AI tool disclosure guide with journal-specific policies and EN/JP templates |
+| `references/ai-disclosure.md` | ICMJE 2023 AI tool disclosure guide with journal-specific policies and EN/VI templates |
 | `references/tables-figures-guide.md` | Comprehensive tables/figures creation guide (Table 1 format, figure types, resolution, captions) |
 | `references/keywords-guide.md` | Keywords and MeSH term selection strategy with journal-specific requirements |
 | `references/supplementary-materials.md` | Supplementary materials strategy (main text vs. supplement decision framework) |
-| `templates/declarations.md` | Declaration templates: Ethics, Informed Consent, COI, Funding, Data Availability, AI Disclosure, CRediT (EN/JP) |
+| `templates/declarations.md` | Declaration templates: Ethics, Informed Consent, COI, Funding, Data Availability, AI Disclosure, CRediT (EN/VI) |
 | `templates/graphical-abstract.md` | Graphical abstract design guide (layouts, specs, tools) |
 
 ### SKILL.md Structural Additions
@@ -259,5 +259,7 @@ After:  Literature Search → Outline → Tables/Figures → Draft → Humanize 
 - **46 files** total in the skill (16 references, 27 templates, 3 scripts)
 - **5 paper types** now have complete workflows (Original Article, Case Report, Review, Systematic Review, Letter)
 - **ICMJE 2023 compliance** for AI disclosure
-- **13 Japanese patterns** (was 12) for AI writing detection
+- **13 Vietnamese patterns** (was 12) for AI writing detection
 - **18 English patterns** for AI writing detection
+
+

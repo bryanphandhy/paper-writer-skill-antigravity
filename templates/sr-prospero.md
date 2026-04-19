@@ -1,4 +1,4 @@
-# PROSPERO Registration Template
+﻿# PROSPERO Registration Template
 
 > PROSPERO is the international prospective register of systematic reviews.
 > Register your protocol BEFORE starting screening.
@@ -298,7 +298,7 @@
 - Include variations that will be accepted
 
 **Example:**
-> Patient education materials generated or substantially assisted by large language models (e.g., GPT-4, Claude, Gemini, LLaMA) or other AI/NLP systems. This includes fully AI-generated text, AI-assisted drafting with clinician review, and AI-translated/adapted materials. Materials may be delivered in any format (written, audio, video with AI-generated scripts).
+> Patient education materials generated or substantially assisted by large language models (e.g., GPT-4, Gemini, Gemini, LLaMA) or other AI/NLP systems. This includes fully AI-generated text, AI-assisted drafting with clinician review, and AI-translated/adapted materials. Materials may be delivered in any format (written, audio, video with AI-generated scripts).
 
 **Your entry:**
 {{INTERVENTION}}
@@ -579,3 +579,4 @@
 - [ ] COI and funding clearly stated
 - [ ] Registration submitted BEFORE screening begins
 - [ ] Existing reviews searched on PROSPERO
+

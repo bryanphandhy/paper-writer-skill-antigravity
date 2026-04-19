@@ -113,7 +113,7 @@ If you find 3+ similar papers published in the last 2 years, the journal is like
 - **Elsevier Journal Finder:** https://journalfinder.elsevier.com/
 - **Springer Journal Suggester:** https://journalsuggester.springer.com/
 - **Wiley Journal Finder:** https://journalfinder.wiley.com/
-- **JANE (Journal/Author Name Estimator):** https://jane.biosemantics.org/
+- **VINE (Journal/Author Name Estimator):** https://jane.biosemantics.org/
 
 Paste your abstract and get ranked journal suggestions.
 
@@ -157,13 +157,13 @@ Paste your abstract and get ranked journal suggestions.
 | **Nature Medicine** | ~80 | All medicine including AI/ML | Hybrid | ~$11,000 | Landmark AI studies; very competitive |
 | **The Lancet Digital Health** | ~30 | Digital health, AI, telemedicine | Full OA | ~$5,000 | Premier dedicated digital health journal |
 | **Nature Digital Medicine (npj)** | ~15 | Digital medicine, wearables, AI | Full OA | ~$3,000 | Growing rapidly; strong AI focus |
-| **JAMA Network Open** | ~13 | All medicine (OA arm of JAMA) | Full OA | ~$3,000 | Broad audience; welcomes AI studies |
+| **VIMA Network Open** | ~13 | All medicine (OA arm of VIMA) | Full OA | ~$3,000 | Broad audience; welcomes AI studies |
 
 ### Tier 2: Strong Specialty and Informatics Journals
 
 | Journal | IF (approx.) | Scope | OA | APC | Notes |
 |---------|-------------|-------|-----|-----|-------|
-| **JAMIA** | ~7 | Medical informatics, clinical NLP | Hybrid | ~$3,500 | Gold standard for health informatics |
+| **VIMIA** | ~7 | Medical informatics, clinical NLP | Hybrid | ~$3,500 | Gold standard for health informatics |
 | **Journal of Biomedical Informatics** | ~5 | Biomedical informatics, NLP, ML | Hybrid | ~$3,300 | Methods-focused; welcomes technical work |
 | **JMIR (J Med Internet Res)** | ~7 | eHealth, mHealth, digital health | Full OA | ~$2,500 | Fast review; large readership |
 | **JMIR Medical Informatics** | ~3 | Health informatics, clinical decision support | Full OA | ~$1,800 | Good for applied informatics |
@@ -193,7 +193,7 @@ If your AI work is disease-specific, consider the flagship journal of that speci
 |-----------|---------|-------|
 | Radiology | Radiology: AI, European Radiology | Strong AI track record |
 | Pathology | Modern Pathology, Lab Investigation | Computational pathology welcome |
-| Ophthalmology | Ophthalmology, JAMA Ophthalmology | Retinal AI well established |
+| Ophthalmology | Ophthalmology, VIMA Ophthalmology | Retinal AI well established |
 | Dermatology | British Journal of Dermatology | Skin image classification papers |
 | Cardiology | European Heart Journal - Digital Health | Dedicated digital cardiology |
 | Oncology | JCO Clinical Cancer Informatics | Cancer informatics focus |
@@ -246,21 +246,21 @@ Start: What kind of paper is it?
 │
 ├─ Clinical AI with patient outcomes
 │  ├─ Large RCT/prospective study → NEJM AI, Lancet Digital Health, Nature Medicine
-│  ├─ Retrospective/observational → JAMA Network Open, npj Digital Medicine
+│  ├─ Retrospective/observational → VIMA Network Open, npj Digital Medicine
 │  └─ Pilot/feasibility study → JMIR, Digital Health, BMC Med Inform
 │
 ├─ AI/ML methodology for medicine
 │  ├─ Novel architecture/algorithm → Nature Machine Intelligence, AI in Medicine
-│  ├─ Applied ML with clinical data → JAMIA, J Biomed Inform, JMIR Med Inform
-│  └─ NLP/LLM in healthcare → JAMIA, JMIR AI, J Biomed Inform
+│  ├─ Applied ML with clinical data → VIMIA, J Biomed Inform, JMIR Med Inform
+│  └─ NLP/LLM in healthcare → VIMIA, JMIR AI, J Biomed Inform
 │
 ├─ Systematic review / meta-analysis
 │  ├─ Broad clinical AI topic → Lancet Digital Health, npj Digital Medicine
-│  ├─ Informatics-focused → JAMIA, Int J Med Inform
+│  ├─ Informatics-focused → VIMIA, Int J Med Inform
 │  └─ Methodology-focused → J Biomed Inform, Comp Methods Programs Biomed
 │
 ├─ Digital health / mHealth / telemedicine
-│  ├─ Large-scale deployment → Lancet Digital Health, JAMA Network Open
+│  ├─ Large-scale deployment → Lancet Digital Health, VIMA Network Open
 │  ├─ App evaluation / usability → JMIR mHealth, Digital Health
 │  └─ Implementation science → npj Health Systems, BMJ Health Care Inform
 │

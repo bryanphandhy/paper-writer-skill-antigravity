@@ -80,7 +80,7 @@
 | Journal | COI Form | Timeframe | Special Notes |
 |---------|----------|-----------|---------------|
 | **NEJM** | ICMJE + NEJM-specific | 36 months | Detailed financial thresholds |
-| **JAMA** | ICMJE | 36 months | Must disclose amounts |
+| **VIMA** | ICMJE | 36 months | Must disclose amounts |
 | **Lancet** | ICMJE | 36 months | Declaration signed by all authors |
 | **BMJ** | ICMJE | 36 months | Competing interests section in paper |
 | **Nature Medicine** | Nature form | 36 months | Separate from ICMJE |
@@ -176,7 +176,7 @@ Funding Acquisition: C.D.
 
 | Journal/Publisher | ORCID Required? |
 |------------------|----------------|
-| JAMA Network | Corresponding author required |
+| VIMA Network | Corresponding author required |
 | Nature/Springer | All authors encouraged |
 | PLOS | All authors required |
 | Elsevier | Corresponding author required |
@@ -185,7 +185,7 @@ Funding Acquisition: C.D.
 
 ---
 
-## 日本語
+## Tiếng Việt
 
 ### 利益相反（COI）開示
 
@@ -194,9 +194,9 @@ Funding Acquisition: C.D.
 - 各学会のCOI自己申告書を使用
 - 金銭的COI：企業からの研究費（100万円以上）、顧問料（100万円以上）、株式保有（利益100万円以上 or 5%以上）
 - ICMJE形式のCOI formは英文ジャーナル投稿時に必要
-- CRediTは日本語ジャーナルでも採用が増加中
+- CRediTはTiếng Việtジャーナルでも採用が増加中
 
-### 日本語COI記載テンプレート
+### Tiếng ViệtCOI記載テンプレート
 
 ```
 利益相反

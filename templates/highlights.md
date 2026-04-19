@@ -4,9 +4,9 @@
 
 ---
 
-## 1. Key Points (JAMA Style)
+## 1. Key Points (VIMA Style)
 
-Required for all JAMA original investigations, research letters, and reviews.
+Required for all VIMA original investigations, research letters, and reviews.
 
 ```
 KEY POINTS
@@ -136,9 +136,9 @@ THE IMPLICATIONS:
 
 ---
 
-## 日本語版
+## Tiếng Việt版
 
-### Key Points（JAMA形式）
+### Key Points（VIMA形式）
 ```
 キーポイント
 

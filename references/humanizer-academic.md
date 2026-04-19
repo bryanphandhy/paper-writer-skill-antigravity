@@ -4,7 +4,7 @@ AI が生成した学術文章から「AI臭」を除去し、人間が書いた
 
 出典:
 - matsuikentaro1/humanizer_academic (英語18パターン)
-- humanizer-ja --academic モード (日本語30パターン)
+- humanizer-ja --academic モード (Tiếng Việt30パターン)
 - Wikipedia: Signs of AI writing
 
 ---
@@ -175,62 +175,58 @@ ChatGPT uses curly quotes instead of straight quotes.
 
 ---
 
-## 日本語: 学術論文向けAI臭パターン
+## Tiếng Việt: Nhận diện và loại bỏ văn phong AI trong bài báo học thuật
 
-日本語論文（である調）で特に頻出するパターン。
+Các bài báo khoa học tiếng Việt do AI tạo ra thường có những dấu hiệu đặc trưng. Dưới đây là các mẫu cần nhận diện và loại bỏ.
 
-### A. 記号と表記
+### A. Lạm dụng từ nối và cấu trúc thừa
 
-| # | パターン | Before | After |
+| # | Mẫu nhận diện | Trước khi sửa (AI) | Sau khi sửa (Con người) |
 |---|---------|--------|-------|
-| 1 | emダッシュ | 多角的な視点---すなわち | 多角的な視点、つまり |
-| 2 | カギ括弧で切り出しすぎ | 「真のイノベーション」とは「再構築」である | イノベーションの本質は再構築にある |
-| 3 | 丸括弧で補足しすぎ | プロセス（流れ）を通じて | 流れを通じて |
+| 1 | Lạm dụng từ nối ở đầu câu | Hơn thế nữa, nghiên cứu này... / Thêm vào đó... | Nghiên cứu này cũng cho thấy... (Hoặc xóa hẳn) |
+| 2 | Cấu trúc "Có thể thấy rằng" | Có thể thấy rằng kết quả đã chỉ ra... | Kết quả chỉ ra... |
+| 3 | Lạm dụng "Đóng vai trò quan trọng" | Yếu tố X đóng vai trò vô cùng quan trọng trong... | Yếu tố X quyết định... / Yếu tố X ảnh hưởng đến... |
 
-### B. 文のリズム
+### B. Ngôn từ phóng đại và cảm xúc
 
-| # | パターン | Before | After |
+| # | Mẫu nhận diện | Trước khi sửa (AI) | Sau khi sửa (Con người) |
 |---|---------|--------|-------|
-| 4 | 同じ語尾が続く | である。である。である。 | である、だ、体言止めを混ぜる |
-| 5 | 接続詞が多い | さらに、また、したがって | 順接の接続詞は最小限に |
-| 6 | 段落の終わりが毎回きれいに閉じる | 以上がポイントである。 | 余韻を残す。閉じ方を変える |
+| 4 | Dùng từ ngữ to tát | Nghiên cứu này mang tính đột phá và mở ra kỷ nguyên mới... | Nghiên cứu này cung cấp thêm bằng chứng về... |
+| 5 | Tính từ cảm xúc | Kết quả vô cùng ấn tượng và đáng kinh ngạc... | Kết quả cho thấy sự khác biệt có ý nghĩa thống kê... |
+| 6 | Kết luận sáo rỗng | Tương lai trông rất tươi sáng cho bệnh nhân... | (Xóa bỏ hoặc nêu hệ quả lâm sàng cụ thể) |
 
-### C. 学術文特有の問題
+### C. Dịch máy từ tiếng Anh (Translation clunkiness)
 
-| # | パターン | Before | After |
+| # | Mẫu nhận diện | Trước khi sửa (AI) | Sau khi sửa (Con người) |
 |---|---------|--------|-------|
-| 7 | 保険が多い（逃げ道の常設） | 一概には言えないが、一般的には有効であると考えられる | 有効である。（条件を具体的に述べる） |
-| 8 | 根拠のない評価語 | 非常に有効である。大きなメリットがある | 根拠を添えるか、評価語を下げる |
-| 9 | 抽象語だけで押し切る | 本質を押さえ、最適化し、価値を最大化する | 何がどうなるかを動詞中心の具体表現で |
-| 10 | AIボキャブラリー（日本語版） | さらに、加えて、包括的、革新的、シームレス | 平易な日本語に置き換えるか削除 |
-| 11 | 同義語の言い換え連打 | 重要・大切・欠かせない | 1回で言い切る |
-| 12 | 受動態の過剰使用 | 検討が行われた。分析が実施された。 | 検討した。分析した。（能動態に） |
-| 13 | 非学術的な文体の混入 | 参考になれば幸いである。ポイントは以下の通り | 削除するか、直接内容を述べる |
+| 7 | Bị động khiên cưỡng | Một sự cải thiện đã được nhìn thấy bởi chúng tôi | Chúng tôi nhận thấy sự cải thiện / Sự cải thiện được ghi nhận |
+| 8 | Lạm dụng "Của" (Of) | Sự phát triển của các triệu chứng của bệnh nhân... | Diễn tiến triệu chứng bệnh nhân... |
+| 9 | Dịch word-by-word | Vào cuối ngày, phương pháp này... (At the end of the day) | Tóm lại, phương pháp này... |
 
-### D. 日本語AIボキャブラリー一覧
+### D. Danh sách từ vựng AI thường dùng (Tiếng Việt)
 
-以下の語が高密度で出現している場合、AI生成を疑う：
+Nếu đoạn văn có mật độ cao các từ sau, hãy nghi ngờ đó là văn AI và cần chỉnh sửa lại cho tự nhiên và học thuật hơn:
 
-さらに / また / 加えて / 包括的 / 革新的 / シームレス / 多角的 / 本質的 / 不可欠 / 重要な役割を果たす / 大きな意義を持つ / 注目に値する / 示唆に富む / 興味深いことに / 特筆すべきは
+*Hơn thế nữa, Thêm vào đó, Ngoài ra, Đáng chú ý là, Đóng vai trò quan trọng, Bức tranh toàn cảnh, Tính cấp thiết, Mở ra hướng đi mới, Chìa khóa, Toàn diện, Sâu sắc.*
 
 ---
 
-## Section-Specific Application
+## Áp dụng cho từng phần (Section-Specific)
 
-各セクションでの重点チェック：
+Trọng tâm kiểm tra cho từng phần của bài báo:
 
-| Section | 重点パターン | 理由 |
+| Phần (Section) | Mẫu cần chú ý (Priority) | Lý do |
 |---------|-------------|------|
-| Introduction | #1 Significance inflation, #5 Vague attributions | 背景を膨らませがち |
-| Methods | #16 Filler phrases, #8 Copula avoidance | 冗長になりがち |
-| Results | #3 -ing analyses, #4 Promotional language | 結果に解釈を混ぜがち |
-| Discussion | #17 Excessive hedging, #6 Formulaic challenges | 考察が定型化しがち |
-| Conclusion | #18 Generic conclusions, #1 Significance inflation | 締めが空疎になりがち |
-| Abstract | All patterns | 最も目に触れる部分 |
+| Mở đầu (Introduction) | Từ ngữ phóng đại, "Bức tranh toàn cảnh" | AI thường viết bối cảnh quá rộng và sáo rỗng |
+| Phương pháp (Methods) | Bị động khiên cưỡng | AI thường dịch sai cấu trúc bị động tiếng Anh |
+| Kết quả (Results) | Tính từ cảm xúc ("ấn tượng") | AI hay tự thêm nhận xét vào phần kết quả |
+| Bàn luận (Discussion) | Lạm dụng từ nối ("Hơn thế nữa") | AI dùng từ nối để tạo cảm giác logic giả tạo |
+| Kết luận (Conclusion) | Kết luận sáo rỗng, hứa hẹn tương lai | AI thường không biết cách chốt lại vấn đề cụ thể |
+| Tóm tắt (Abstract) | Tất cả các mẫu trên | Đây là phần quan trọng nhất, cần viết cô đọng |
 
 ---
 
-## Quick Checklist (Before Submission)
+## Quick Checklist (Trước khi nộp bài)
 
 ### English
 - [ ] No "Additionally" / "Furthermore" at sentence start (> 2 times)
@@ -243,14 +239,12 @@ ChatGPT uses curly quotes instead of straight quotes.
 - [ ] Em dashes used sparingly (< 2 per page)
 - [ ] Hedging is proportionate to evidence
 
-### 日本語
-- [ ] 「さらに」「また」「加えて」の連発がない
-- [ ] 同じ語尾が3回以上続いていない
-- [ ] 根拠なき「非常に」「大きな」がない
-- [ ] 受動態の過剰使用がない（能動態に直す）
-- [ ] 定型的な締めの句がない
-- [ ] 抽象語だけで押し切っていない
-- [ ] カギ括弧を多用していない
+### Tiếng Việt
+- [ ] Không lạm dụng "Hơn thế nữa", "Thêm vào đó" ở đầu câu.
+- [ ] Không có các từ ngữ phóng đại (đột phá, kỷ nguyên mới, vô cùng quan trọng).
+- [ ] Không dùng câu bị động khiên cưỡng kiểu tiếng Anh.
+- [ ] Kết luận đi thẳng vào vấn đề, không có câu kết sáo rỗng kiểu "hy vọng trong tương lai".
+- [ ] Các thuật ngữ y khoa/khoa học được sử dụng chính xác, thống nhất.
 
 ---
 
@@ -258,34 +252,6 @@ ChatGPT uses curly quotes instead of straight quotes.
 
 - Wikipedia: Signs of AI writing
 - matsuikentaro1/humanizer_academic (English academic patterns)
-- humanizer-ja (Japanese patterns, --academic mode)
+- humanizer-vi (Vietnamese patterns, --academic mode)
 - Fitchett D, et al. Circulation. 2019;139(11):1384-1395. (Example source, CC-BY-4.0)
 
----
-
-## 日本語: セクション別重点パターン
-
-各セクションで特に注意すべきパターン。全パターンのチェックは必須だが、以下のパターンは各セクションで特に頻出する。
-
-| セクション | 重点パターン | 理由 |
-|-----------|-------------|------|
-| 緒言 | C-2 根拠なき評価語, B-2 接続詞過多 | 背景を膨らませがち |
-| 方法 | C-6 受動態の過剰使用, C-3 抽象語 | 冗長になりがち |
-| 結果 | B-1 同じ語尾, A-3 丸括弧多用 | 単調になりがち |
-| 考察 | C-1 保険が多い, C-4 AIボキャブラリー | 考察が定型化しがち |
-| 結論 | C-2 根拠なき評価語, C-7 非学術的文体 | 締めが空疎になりがち |
-| 抄録 | 全パターン | 最も目に触れる部分 |
-
-### C-7: 非学術的な文体の混入（追加パターン）
-
-AIが学術論文にブログ・SNS・FAQ調の文体を混入させるパターン。
-
-| Before | After |
-|--------|-------|
-| 参考になれば幸いである | （削除） |
-| ポイントは以下の通りである | （削除し、直接内容を述べる） |
-| まずは小さく始めてみてはいかがだろうか | （削除） |
-| 以上が本研究のポイントである | 本研究の結果は以下の通りである |
-| 興味深いことに | （削除、または具体的な理由を述べる） |
-
-このパターンはLLMの学習データにFAQ・ブログ・研修資料が多く含まれるために発生する。学術論文では読者への語りかけや感想表現を避ける。

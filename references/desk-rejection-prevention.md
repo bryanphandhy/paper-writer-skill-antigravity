@@ -139,7 +139,7 @@
 | Journal | Desk Decision | Peer Review | Total to First Decision |
 |---------|--------------|-------------|----------------------|
 | NEJM | 1-2 weeks | 3-4 weeks | 4-6 weeks |
-| JAMA | 1-2 weeks | 4-6 weeks | 6-8 weeks |
+| VIMA | 1-2 weeks | 4-6 weeks | 6-8 weeks |
 | Lancet | 1-2 weeks | 4-6 weeks | 6-8 weeks |
 | BMJ | 1-2 weeks | 3-5 weeks | 4-7 weeks |
 | PLOS ONE | 1 week | 4-8 weeks | 5-9 weeks |
@@ -158,7 +158,7 @@
 
 ---
 
-## 日本語
+## Tiếng Việt
 
 ### デスクリジェクションを防ぐ
 

@@ -1,4 +1,4 @@
-# Declarations Section Templates
+﻿# Declarations Section Templates
 
 Use these templates for the Declarations section of your manuscript. Most journals require all of these statements. Check your target journal's requirements.
 
@@ -31,7 +31,7 @@ This study did not involve human subjects and was exempt from
 institutional review board approval.
 ```
 
-### Japanese
+### Vietnamese
 
 ```
 本研究は[施設名]倫理委員会の承認を得て実施した（承認番号：[番号]、
@@ -65,7 +65,7 @@ guardian] for publication of this case report and accompanying images.
 A copy of the consent form is available for review by the Editor.
 ```
 
-### Japanese
+### Vietnamese
 
 ```
 全対象者から書面によるインフォームドコンセントを取得した。
@@ -96,7 +96,7 @@ advisory board of [Company Name]. All other authors declare no
 conflicts of interest.
 ```
 
-### Japanese
+### Vietnamese
 
 ```
 著者らに開示すべき利益相反はない。
@@ -126,7 +126,7 @@ This research did not receive any specific grant from funding agencies
 in the public, commercial, or not-for-profit sectors.
 ```
 
-### Japanese
+### Vietnamese
 
 ```
 本研究は[助成機関名]（課題番号：[番号]）の助成を受けた。助成機関は
@@ -164,7 +164,7 @@ but are available from the corresponding author on reasonable request
 with appropriate ethics approval.
 ```
 
-### Japanese
+### Vietnamese
 
 ```
 本研究で使用したデータは[リポジトリ名]（[URL]）で公開されている。
@@ -188,7 +188,7 @@ edited, and verified all AI-assisted output and take full responsibility
 for the content of this publication.
 ```
 
-### Template (Japanese)
+### Template (Vietnamese)
 
 ```
 本論文の作成にあたり、著者らは[ツール名]（[企業名]）を[目的]の
@@ -211,7 +211,7 @@ Writing - original draft, Writing - review & editing.
 [Author 3]: Supervision, Writing - review & editing, Funding acquisition.
 ```
 
-### Japanese
+### Vietnamese
 
 ```
 [著者1]：研究の構想・デザイン、解析、論文執筆。
@@ -249,3 +249,4 @@ Copy and fill in for your manuscript:
 ### Author Contributions
 [Insert CRediT-format contributions]
 ```
+

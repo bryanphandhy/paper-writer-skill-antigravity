@@ -246,7 +246,7 @@ Used in systematic reviews and clinical guidelines.
 
 ---
 
-## 日本語
+## Tiếng Việt
 
 ### 報告ガイドライン選択
 
