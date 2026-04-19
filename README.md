@@ -239,7 +239,7 @@ paper-writer/
 │   ├── citation-verification.md       # Citation verification guide
 │   ├── reporting-guidelines.md        # Reporting guidelines summary
 │   ├── reporting-guidelines-full.md   # 20+ reporting guidelines with checklists
-│   ├── humanizer-academic.md          # AI writing detection (EN 18 + JP 13 patterns)
+│   ├── humanizer-academic.md          # AI writing detection (EN 18 + VI 13 patterns)
 │   ├── statistical-reporting.md       # Statistical reporting guide
 │   ├── statistical-reporting-full.md  # Extended SAMPL guide
 │   ├── journal-selection.md           # Journal selection strategy
@@ -280,7 +280,7 @@ paper-writer/
 | **2** | Outline | Paper skeleton design (user approval required) |
 | **2.5** | Tables & Figures | Design tables/figures before writing prose |
 | **3** | Drafting | Methods → Results → Intro P3 + Conclusion → Discussion → Intro P1-2 → Abstract → Title |
-| **4** | Humanize | AI writing pattern removal (EN 18 + JP 13 patterns) |
+| **4** | Humanize | AI writing pattern removal (EN 18 + VI 13 patterns) |
 | **5** | References | Citation formatting, deduplication, existence verification |
 | **6** | Quality Review | Cross-section verification, reporting guideline compliance |
 | **7** | Pre-Submission | Cover letter, title page, declarations, final checklist |
@@ -297,7 +297,7 @@ CONSORT 2025, STROBE, PRISMA 2020, CARE, STARD 2015, SQUIRE 2.0, SPIRIT 2025, TR
 | Language | Coverage |
 |----------|----------|
 | **English** | All templates and guides, 18 AI writing detection patterns |
-| **Vietnamese** | All templates bilingual (EN/VI), 13 AI writing detection patterns, である-style |
+| **Vietnamese** | All templates bilingual (EN/VI), 13 AI writing detection patterns |
 
 ## AI Writing Detection (Humanizer)
 
@@ -339,7 +339,7 @@ This skill relies on Antigravity's workspace capabilities. Once cloned, Antigrav
 ## Requirements
 
 - [Antigravity](https://gemini.ai/code) CLI
-- search_web / read_url_content (used for literature search)
+- search_web / read_url_content / mcp_Consensus_search (used for literature search)
 - Python 3 + numpy, pandas, scipy, statsmodels, lifelines, matplotlib (for data analysis scripts)
 
 ## License

@@ -106,86 +106,73 @@ Always explicitly mention the accompanying response document. Use one of these f
 
 ---
 
-## Tiếng Việt版
+## Phiên bản Tiếng Việt
 
-### テンプレート
-
----
-
-**日付：** [YYYY年MM月DD日]
-
-**宛先：**
-[雑誌名]
-編集委員長 [編集者名] 先生
-
-**件名：** 改訂原稿の再投稿（原稿番号：[MANUSCRIPT-ID]）
-**論文タイトル：** 「[論文タイトル]」
+### Mẫu thư (Template)
 
 ---
 
-[編集者名] 先生
+**Ngày:** [Ngày, Tháng, Năm]
 
-拝啓
+**Kính gửi:**
+[Tên Tổng Biên tập], [Chức danh]
+[Tên Tạp chí]
 
-時下ますますご清祥のこととお慶び申し上げます。
-
-この度は、私どもの原稿「[論文タイトル]」（原稿番号：[MANUSCRIPT-ID]）に対して改訂の機会を賜り、誠にありがとうございます。編集委員長ならびに査読者の先生方からいただいた丁寧かつ建設的なご指摘に深く感謝申し上げます。
-
-すべてのご指摘を慎重に検討し、原稿を改訂いたしました。改訂により論文が大幅に改善されたものと確信しております。以下に、主要な変更点を要約いたします。
-
-#### 主要な変更点
-
-1. **[主要な変更点1の概要]** -- 査読者[X]のコメント[Y]に対応し、[変更内容]を行いました。（改訂原稿 [セクション/ページ/行] 参照）
-
-2. **[主要な変更点2の概要]** -- 査読者[X]のご提案に従い、[変更内容]を行いました。（改訂原稿 [セクション/ページ/行] 参照）
-
-3. **[主要な変更点3の概要]** -- 査読者[X]より[トピック]に関してご懸念をいただいたため、[変更内容]を行いました。（改訂原稿 [セクション/ページ/行] 参照）
-
-4. **[追加解析・データ]** -- 査読者[X]のご要望に基づき、[追加解析の内容]を実施し、結果を[表/図/補足資料]に掲載いたしました。
-
-5. **[記述・表現の改善]** -- 原稿全体にわたり、[記述の明確化/構成の見直し/図表の改善]を行いました。
-
-各査読者のコメントに対する詳細な回答は、別添の「査読者への回答」に項目ごとに記載しております。改訂原稿の該当ページ・行番号を明示し、修正後の本文を引用しております。
-
-改訂原稿では、[変更履歴機能/カラーテキスト]により変更箇所を明示しております。
-
-以下の点を確認いたします：
-- 全著者が改訂原稿を確認・承認済みであること
-- 著者リストに変更がないこと
-- 新たなデータ・解析はすべてオリジナルであり、他誌に未発表であること
-- [雑誌固有の宣言事項がある場合は追記]
-
-改訂原稿が[雑誌名]への掲載にふさわしいものとなっていることを願っております。ご審査のほど、何卒よろしくお願い申し上げます。
-
-敬具
-
-[責任著者名]
-[学位]
-[職位]
-[所属]
-[住所]
-[メールアドレス]
-[電話番号]
-
-共著者を代表して：
-[共著者名一覧]
+**V/v:** Nộp lại Bản thảo sau chỉnh sửa [MANUSCRIPT-ID]
+**Tiêu đề:** "[Tiêu đề Đầy đủ của Bản thảo]"
 
 ---
 
-### Tiếng Việtカバーレターのポイント
+Kính gửi [GS/TS. Tên Tổng Biên tập],
 
-1. **冒頭の挨拶を忘れない** -- 「拝啓」「時下ますますご清祥のこと...」はTiếng Việtの学術書簡で標準的な形式
-2. **敬語を一貫して使う** -- 査読者は「先生」、コメントは「ご指摘」「ご提案」
-3. **簡潔かつ具体的に** -- 主要変更点を箇条書きで明確に記載
-4. **査読者への回答文書への参照** -- 別添文書の存在を明記
-5. **結びの挨拶** -- 「敬具」で締める
-6. **全著者の承認を明記** -- これは必須事項
+Chúng tôi xin chân thành cảm ơn Quý Tòa soạn đã cho chúng tôi cơ hội chỉnh sửa bản thảo có tiêu đề "[Tiêu đề Đầy đủ của Bản thảo]" (Mã số: [MANUSCRIPT-ID]) gửi tạp chí [Tên Tạp chí]. Chúng tôi rất trân trọng những nhận xét kỹ lưỡng và mang tính xây dựng từ Ban biên tập và các phản biện.
 
-### 査読者への回答文書への参照方法（Tiếng Việt）
+Chúng tôi đã xem xét cẩn thận tất cả các bình luận và tiến hành chỉnh sửa bản thảo một cách tương ứng. Chúng tôi tin rằng những thay đổi này đã cải thiện đáng kể chất lượng của bài báo. Dưới đây, chúng tôi xin tóm tắt các thay đổi chính để phản hồi lại các ý kiến từ phản biện.
 
-> 「各査読者のコメントに対する詳細な回答は、別添の『査読者への回答』に記載しております。」
+#### Tóm tắt các thay đổi chính
 
-> 「添付の回答書において、すべてのご指摘に対して個別に回答し、改訂原稿の該当箇所を明示しております。」
+1. **[Mô tả ngắn gọn thay đổi chính 1]** -- Phản hồi lại Nhận xét [Y] của Phản biện [X], chúng tôi đã [mô tả những gì đã làm]. (Xem bản thảo đã chỉnh sửa, [Phần/Trang/Dòng])
+
+2. **[Mô tả ngắn gọn thay đổi chính 2]** -- Theo gợi ý của Phản biện [X], chúng tôi đã [mô tả những gì đã làm]. (Xem bản thảo đã chỉnh sửa, [Phần/Trang/Dòng])
+
+3. **[Mô tả ngắn gọn thay đổi chính 3]** -- Để giải quyết các quan ngại của Phản biện [X] về [chủ đề], chúng tôi đã [mô tả những gì đã làm]. (Xem bản thảo đã chỉnh sửa, [Phần/Trang/Dòng])
+
+4. **[Phân tích hoặc dữ liệu bổ sung]** -- Theo yêu cầu của Phản biện [X], chúng tôi đã thực hiện [mô tả phân tích/thí nghiệm mới] và đưa kết quả vào [Bảng/Hình/Phụ lục].
+
+5. **[Cải thiện văn phong và trình bày]** -- Chúng tôi đã [cải thiện độ rõ ràng / cấu trúc lại các phần / làm rõ hình ảnh / v.v.] trên toàn bộ bản thảo.
+
+Phản hồi chi tiết từng điểm cho mỗi nhận xét của phản biện được cung cấp trong tài liệu kèm theo có tiêu đề "Response to Reviewers". Trong tài liệu đó, chúng tôi giải quyết từng bình luận với trích dẫn số trang và dòng cụ thể từ bản thảo đã chỉnh sửa.
+
+Tất cả các thay đổi trong bản thảo đã chỉnh sửa được làm nổi bật bằng [track changes / văn bản có màu / đánh dấu], giúp Quý vị dễ dàng nhận diện các điểm đã sửa đổi.
+
+Chúng tôi xin cam đoan rằng:
+- Tất cả các tác giả đã xem xét và đồng ý với bản thảo đã chỉnh sửa
+- Không có sự thay đổi nào về danh sách tác giả
+- Tất cả các dữ liệu và phân tích mới đều là nguyên bản và chưa từng được công bố ở nơi khác
+- [Bất kỳ tuyên bố nào khác theo yêu cầu của tạp chí]
+
+Chúng tôi hy vọng rằng bản thảo đã chỉnh sửa hiện tại đáp ứng được các tiêu chuẩn xuất bản của [Tên Tạp chí]. Chúng tôi mong nhận được quyết định từ Quý Tòa soạn.
+
+Trân trọng,
+
+[Tên Tác giả liên hệ], [Học vị]
+[Chức danh/Vị trí]
+[Khoa/Phòng]
+[Cơ quan/Tổ chức]
+[Địa chỉ]
+[Email]
+[Số điện thoại]
+
+Thay mặt cho tất cả các đồng tác giả:
+[Danh sách tên tất cả các đồng tác giả]
+
+---
+
+### Mẹo Viết Thư Bằng Tiếng Việt
+1. **Luôn giữ thái độ trân trọng** -- Sử dụng các từ ngữ như "Kính gửi", "Trân trọng cảm ơn", "Chúng tôi đánh giá cao".
+2. **Ngắn gọn và Cụ thể** -- Tóm tắt các thay đổi chính một cách rõ ràng.
+3. **Tham chiếu đến Tài liệu Phản hồi** -- Luôn nhắc đến tài liệu "Response to Reviewers" đính kèm.
+4. **Cam kết của tập thể tác giả** -- Khẳng định tất cả các tác giả đều đồng thuận với bản chỉnh sửa.
 
 ---
 

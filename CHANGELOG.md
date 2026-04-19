@@ -7,10 +7,11 @@
 Adapted the repository for the Antigravity platform, leveraging Gemini agents and the Consensus MCP.
 
 ### Changes
-- **Tool Integration**: Replaced generic web search with `mcp_Consensus_search` in the literature review phase for high-quality, peer-reviewed paper retrieval.
+- **Bug Fix**: Fully purged remaining legacy Japanese strings from `SKILL.md`, `README.md`, and `templates/revision-cover-letter.md`, synchronizing the entire pipeline to English and Vietnamese only.
+- **Tool Integration**: Replaced generic web search with `mcp_Consensus_search` in the literature review phase for high-quality, peer-reviewed paper retrieval. Documented the tool usage in `README.md` and `SKILL.md`.
 - **Vietnamese Support**: Removed all Japanese documentation, replacing it entirely with Vietnamese guidelines.
 - **Writing Standards**: Re-wrote `multilingual-guide.md` and `humanizer-academic.md` to reflect specific Vietnamese academic writing and AI-generation-removal patterns.
-- **README Translation**: Introduced `README.vi.md` as the primary translated overview.
+- **README Translation**: Introduced `README.vi.md` as the primary translated overview and fixed mermaid chart rendering issues.
 
 ---
 
