@@ -2,7 +2,7 @@
 
 A Antigravity skill for medical/scientific paper writing. Covers the entire manuscript lifecycle from literature search to submission, peer review response, and rejection handling.
 
-> **Tiếng Việt版はこちら → [README.vi.md](README.vi.md)**
+> **Tiếng Việt → [README.vi.md](README.vi.md)**
 
 ## Overview
 
@@ -10,13 +10,13 @@ A **10-phase** pipeline that generates and manages IMRAD-format project director
 
 ```mermaid
 graph LR
-    P1[1. Literature Search] --> P2[2. Outline]
-    P2 --> P25[2.5 Tables/Figures]
-    P25 --> P3[3. Draft]
-    P3 --> P4[4. Humanize]
-    P4 --> P5[5. References]
-    P5 --> P6[6. Quality Review]
-    P6 --> P7[7. Pre-Submission]
+    P1["1. Literature Search"] --> P2["2. Outline"]
+    P2 --> P25["2.5 Tables/Figures"]
+    P25 --> P3["3. Draft"]
+    P3 --> P4["4. Humanize"]
+    P4 --> P5["5. References"]
+    P5 --> P6["6. Quality Review"]
+    P6 --> P7["7. Pre-Submission"]
     P7 --> P8["8. Revision ①"]
     P8 --> P9["9. Post-Acceptance"]
     P7 -.-> P10["10. Rejection → Resubmit"]
@@ -82,24 +82,24 @@ Phases are parallelized with specialized agents running concurrently:
 ```mermaid
 flowchart TB
     subgraph P1["Phase 1 — Literature Search (3 parallel)"]
-        L1[PubMed Searcher]
-        L2[Google Scholar Searcher]
-        L3[Domain DB Searcher]
+        L1["PubMed Searcher"]
+        L2["Google Scholar Searcher"]
+        L3["Domain DB Searcher"]
     end
 
     subgraph P3["Phase 3 — Drafting (grouped parallel)"]
         direction LR
-        D1[Methods] --> D3[Intro]
-        D2[Results] --> D4[Conclusion]
+        D1["Methods"] --> D3["Intro"]
+        D2["Results"] --> D4["Conclusion"]
     end
 
     subgraph P4["Phase 4 — Humanize (up to 6 parallel)"]
-        H1[Humanizer × N sections]
+        H1["Humanizer × N sections"]
     end
 
     subgraph P6["Phase 6 — Quality Review"]
-        R1[Section Reviewer ×N]
-        R2[Quality Gate — Gemini 3.1 Pro (High)]
+        R1["Section Reviewer ×N"]
+        R2["Quality Gate — Gemini 3.1 Pro (High)"]
     end
 
     L1 & L2 & L3 --> MERGE["Merge Matrix"]
