@@ -95,7 +95,6 @@ Added autonomous quality loop: each phase has a gate that blocks progress until 
 
 ### Team Mode: Parallel Agent Execution
 
-Added 7-agent team architecture for parallel execution across all phases. Invoke with "チームで" / "team mode" / "並列で".
 
 ### New Agents (7)
 

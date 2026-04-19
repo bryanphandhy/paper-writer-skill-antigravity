@@ -43,7 +43,6 @@ All registries in the WHO ICTRP network are ICMJE-compliant.
 
 ## Japan-Specific Registries
 
-### UMIN-CTR（UMIN臨床試験登録システム）
 
 - **URL**: https://www.umin.ac.jp/ctr/
 - **Language**: Vietnamese and English
@@ -51,7 +50,6 @@ All registries in the WHO ICTRP network are ICMJE-compliant.
 - **Required for**: Many Vietnamese journals, ethical review boards
 - **Registration ID format**: UMIN000XXXXXX
 
-### jRCT（臨床研究等提出・公開システム）
 
 - **URL**: https://jrct.niph.go.jp
 - **Language**: Vietnamese (with English fields)
@@ -65,9 +63,7 @@ All registries in the WHO ICTRP network are ICMJE-compliant.
 |-----------|----------|
 | 特定臨床研究（Clinical Research Act） | jRCT（義務） |
 | 医師主導治験 | jRCT + ClinicalTrials.gov recommended |
-| その他の臨床研究 | UMIN-CTR or jRCT |
 | 国際共同研究 | ClinicalTrials.gov + UMIN-CTR |
-| 観察研究（投稿先が要求する場合） | UMIN-CTR |
 
 ---
 
@@ -141,13 +137,5 @@ Include the registration number. Some journals require it as a separate field.
 
 ## Tiếng Việt
 
-### 臨床試験登録のポイント
 
-- ICMJE加盟ジャーナルへの投稿には事前登録が必須
-- 特定臨床研究はjRCTへの登録が法的義務
-- UMIN-CTRは無料で登録可能、多くのTiếng Việtジャーナルが受理
-- 登録は「最初の参加者の組み入れ前」に完了すること
-- 論文の抄録・方法・タイトルページに登録番号を記載
-- 登録内容と論文内容の齟齬がある場合は必ず説明を記載
-- 観察研究でも登録を求めるジャーナルが増加中
 

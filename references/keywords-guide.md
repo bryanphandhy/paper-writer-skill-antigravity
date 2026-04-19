@@ -108,7 +108,6 @@ For Vietnamese journals requiring bilingual keywords:
 
 ```
 Keywords: diabetic retinopathy, artificial intelligence, screening
-キーワード：糖尿病網膜症、人工知能、スクリーニング
 ```
 
 Rules:

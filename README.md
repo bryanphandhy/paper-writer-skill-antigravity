@@ -140,7 +140,6 @@ flowchart TB
 
 Or use natural language triggers:
 - `write paper` / `start manuscript` / `research paper`
-- `論文を書く` / `論文執筆` / `原稿作成`
 
 ### Project Setup
 

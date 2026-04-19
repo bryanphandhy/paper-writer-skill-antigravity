@@ -1,6 +1,6 @@
 ---
 name: paper-writer
-description: "Medical/scientific paper writing workflow skill. Manages the full pipeline from literature search to submission-ready manuscript. Creates and manages a project directory with IMRAD-format section files, literature matrix, reference management, and quality checklists. Supports both English and Vietnamese papers. Triggers: 'write paper', 'paper-write', 'start manuscript', '論文を書く', '論文執筆', '論文プロジェクト', 'manuscript', 'research paper', '原稿作成'."
+description: "Medical/scientific paper writing workflow skill. Manages the full pipeline from literature search to submission-ready manuscript. Creates and manages a project directory with IMRAD-format section files, literature matrix, reference management, and quality checklists. Supports both English and Vietnamese papers. Triggers: 'write paper', 'paper-write', 'start manuscript', 'manuscript', 'research paper', 'vietnamese paper'."
 ---
 
 # Paper Writer Skill
@@ -778,14 +778,7 @@ Consult `references/humanizer-academic.md` for specific before/after examples. F
 
 **Tiếng Việt:**
 
-| セクション | 重点パターン |
 |-----------|-------------|
-| 緒言 | C-2 根拠なき評価語, B-2 接続詞過多 |
-| 方法 | C-6 受動態の過剰使用, C-3 抽象語 |
-| 結果 | B-1 同じ語尾, A-3 丸括弧多用 |
-| 考察 | C-1 保険が多い, C-4 AIボキャブラリー |
-| 結論 | C-2 根拠なき評価語, C-7 非学術的文体 |
-| 抄録 | 全パターン |
 
 #### Step 4.4: Verify
 
@@ -1169,146 +1162,137 @@ When the user specifies "team mode", "parallel", or similar, run the phases with
 
 ### Team Composition
 
-| エージェント | 役割 | エージェント定義 | モデル |
+| Agent | Role | Agent Definition | Model |
 |------------|------|----------------|--------|
-| 文献検索 | DB別の並列論文検索 | `[workspace]/paper-writer-skill-antigravity/agents/paper-lit-searcher.md` | Gemini 3.1 Pro |
-| 表・図設計 | 表と図の並列設計 | `[workspace]/paper-writer-skill-antigravity/agents/paper-table-figure-planner.md` | Gemini 3.1 Pro |
-| セクション執筆 | 汎用セクション執筆 | `[workspace]/paper-writer-skill-antigravity/agents/paper-section-drafter.md` | Gemini 3.1 Pro |
-| ヒューマナイザー | AI文体パターン除去 | `[workspace]/paper-writer-skill-antigravity/agents/paper-humanizer.md` | Gemini 3.1 Flash |
-| 参考文献 | 引用収集・検証 | `[workspace]/paper-writer-skill-antigravity/agents/paper-ref-builder.md` | Gemini 3.1 Pro |
-| セクションレビュー | セクション品質チェック | `[workspace]/paper-writer-skill-antigravity/agents/paper-section-reviewer.md` | Gemini 3.1 Pro |
-| 品質ゲート | 横断整合性の最終検証 | `[workspace]/paper-writer-skill-antigravity/agents/paper-quality-gate.md` | Gemini 3.1 Pro (High) |
+| Literature Search | Parallel DB search | `[workspace]/paper-writer-skill-antigravity/agents/paper-lit-searcher.md` | Gemini 3.1 Pro |
+| Table/Figure Design | Parallel design | `[workspace]/paper-writer-skill-antigravity/agents/paper-table-figure-planner.md` | Gemini 3.1 Pro |
+| Section Drafter | Generic drafting | `[workspace]/paper-writer-skill-antigravity/agents/paper-section-drafter.md` | Gemini 3.1 Pro |
+| Humanizer | AI pattern removal | `[workspace]/paper-writer-skill-antigravity/agents/paper-humanizer.md` | Gemini 3.1 Flash |
+| References | Citation verify/collect | `[workspace]/paper-writer-skill-antigravity/agents/paper-ref-builder.md` | Gemini 3.1 Pro |
+| Section Reviewer | Section quality check | `[workspace]/paper-writer-skill-antigravity/agents/paper-section-reviewer.md` | Gemini 3.1 Pro |
+| Quality Gate | Final cross-section verify | `[workspace]/paper-writer-skill-antigravity/agents/paper-quality-gate.md` | Gemini 3.1 Pro (High) |
 
-### Phase別チームワークフロー
+### Team Workflow per Phase
 
-#### Phase 0, 2: 逐次実行（変更なし）
-ユーザーとの対話が必要なため、既存フローのまま実行する。
+#### Phase 0, 2: Sequential execution (unchanged)
+Because user interaction is required, these are run sequentially.
 
-#### Phase 1: 文献検索（並列 x3）
+#### Phase 1: Literature Search (Parallel x3)
 
-`paper-lit-searcher` を3つ**並列**でAgent toolから起動する：
+Run 3 `paper-lit-searcher` agents **in parallel**:
+- Agent A: PubMed search (MeSH terms)
+- Agent B: Google Scholar search (free text)
+- Agent C: User-provided papers review + Domain-specific DBs
 
-- Agent A: PubMed検索（MeSH用語使用）
-- Agent B: Google Scholar検索（フリーテキスト）
-- Agent C: ユーザー提供の重要論文レビュー + ドメイン固有DB（CiNii, EMBASE等）
+After all 3 complete, the lead orchestrator merges the results into `00_literature/literature-matrix.md` (deduplication).
 
-3エージェント完了後、リードが結果をマージし `00_literature/literature-matrix.md` を作成（重複除去）。
+#### Phase 2.5: Tables & Figures (Parallel x2)
 
-#### Phase 2.5: 表・図（並列 x2）
+Run 2 `paper-table-figure-planner` agents **in parallel**:
+- Agent A: Table design (output to `tables/`)
+- Agent B: Figure design (output to `figures/`)
 
-`paper-table-figure-planner` を2つ**並列**で起動：
+#### Phase 3: Drafting (Grouped Parallel)
 
-- Agent A: 表の設計（`tables/` に出力）
-- Agent B: 図の設計（`figures/` に出力）
+Run `paper-section-drafter` in rounds based on dependencies.
 
-#### Phase 3: ドラフティング（グループ並列）
+**For Original Article:**
+- **Round 1**: Methods + Results (paired drafting, 1 agent)
+- **Round 2**: Introduction P3 + Conclusion (parallel x2, mirror relationship)
+- **Round 3**: Discussion + Introduction P1-P2 + Abstract (parallel x3)
+- **Round 4**: Title (1 agent)
 
-`paper-section-drafter` を依存関係に基づいてラウンド実行する。
+**For Case Report:**
+- **Round 1**: Case Presentation (sequential, requires clinical info)
+- **Round 2**: Discussion + Introduction (parallel x2)
+- **Round 3**: Abstract + Title (parallel x2)
 
-**Original Article の場合:**
-- **Round 1**: Methods + Results（ペアリング執筆、1エージェント）
-- **Round 2**: Introduction P3 + Conclusion（並列 x2、ミラー関係）
-- **Round 3**: Discussion + Introduction P1-P2 + Abstract（並列 x3）
-- **Round 4**: Title（1エージェント）
+**For Systematic Review:**
+- **Round 1**: Methods (sequential, most important section)
+- **Round 2**: Results (sequential, depends on Methods)
+- **Round 3**: Discussion + Introduction + Abstract (parallel x3)
+- **Round 4**: Title (1 agent)
 
-**Case Report の場合:**
-- **Round 1**: Case Presentation（逐次、ユーザーの臨床情報必要）
-- **Round 2**: Discussion + Introduction（並列 x2）
-- **Round 3**: Abstract + Title（並列 x2）
+#### Phase 4: Humanize (Parallel x up to 6)
 
-**Systematic Review の場合:**
-- **Round 1**: Methods（逐次、最重要セクション）
-- **Round 2**: Results（逐次、Methods構造に依存）
-- **Round 3**: Discussion + Introduction + Abstract（並列 x3）
-- **Round 4**: Title（1エージェント）
+Run `paper-humanizer` in **parallel** for each section:
+- Each agent handles 1 section
+- All agents reference `references/humanizer-academic.md`
+- Once completed, the lead runs the Phase 4.4 verification checklist
 
-#### Phase 4: ヒューマナイズ（並列 x最大6）
+#### Phase 5: References (2 stages)
 
-`paper-humanizer` をセクション数分**並列**で起動：
+Run `paper-ref-builder` in 2 stages:
+1. **Builder Mode**: Collect citations from all sections → format per journal style
+2. **Verifier Mode**: Check existence of each reference using search_web → flag fabrications
 
-- 各エージェントが1セクションを担当
-- 全エージェントが `references/humanizer-academic.md` を参照
-- 完了後、リードがPhase 4.4検証チェックリストを実行
+#### Phase 6: Quality Review (Parallel + Gate)
 
-#### Phase 5: 参考文献（2段階）
+**Round 1**: Run `paper-section-reviewer` in **parallel** for each section
+- Evaluates based on `references/section-checklist.md`
 
-`paper-ref-builder` を2段階で実行：
+**Round 2**: Run 1 `paper-quality-gate` (opus model)
+- Cross-section consistency verification
+- Must PASS. If FAIL, the relevant section is sent back for revision.
 
-1. **Builder モード**: 全セクションから引用収集→ジャーナル形式でフォーマット
-2. **Verifier モード**: search_webで各文献の実在確認→捏造フラグ
+#### Phase 7: Pre-Submission (Parallel x4)
 
-#### Phase 6: 品質レビュー（並列 + ゲート）
+Run 4 `paper-section-drafter` agents **in parallel**:
+- Agent A: Title page
+- Agent B: Highlights / Key Points
+- Agent C: Acknowledgments / Declarations
+- Agent D: Cover Letter
 
-**Round 1**: `paper-section-reviewer` をセクション数分**並列**で起動
-- 各エージェントが `references/section-checklist.md` に基づき評価
+After completion, run `scripts/compile-manuscript.sh` to assemble the final document.
 
-**Round 2**: `paper-quality-gate` を1つ起動（opusモデル）
-- 全セクションの横断整合性を検証
-- PASS必須。FAILなら該当セクションを修正し再レビュー
+#### Phase 8: Revision (Parallel x3)
 
-#### Phase 7: 投稿準備（並列 x4）
+Parse and categorize reviewer comments sequentially (user interaction). Then:
+- Agent A: Address Must Fix comments
+- Agent B: Address Should Fix comments
+- Agent C: Draft Rebuttal letter
 
-`paper-section-drafter` を4つ**並列**で起動：
+After completion, rerun Phase 4 and Phase 6 on the modified sections.
 
-- Agent A: タイトルページ（`templates/title-page.md` 参照）
-- Agent B: ハイライト / Key Points（`templates/highlights.md` 参照）
-- Agent C: 謝辞・宣言（`templates/acknowledgments.md` + `templates/declarations.md` 参照）
-- Agent D: カバーレター（`templates/cover-letter.md` 参照）
+#### Phase 9-10: Sequential (unchanged)
+Event-driven (proof arrival, rejection notice).
 
-完了後、`scripts/compile-manuscript.sh` で最終統合。
+### Team Mode Usage Strategy
 
-#### Phase 8: リビジョン（並列 x3）
+| Scenario | Recommended Mode |
+|----------|------------------|
+| Original Article (many sections) | Team Mode |
+| Systematic Review (massive literature) | Team Mode |
+| Case Report (few sections) | Sequential Mode |
+| Letter / Short Communication | Sequential Mode |
+| Tight Deadline | Team Mode |
 
-レビュアーコメントのパース・カテゴリ分けは逐次（ユーザー対話）。その後：
+### Autonomous Stage-Gate System
 
-- Agent A (`paper-section-drafter`): Must Fix コメント対応
-- Agent B (`paper-section-drafter`): Should Fix コメント対応
-- Agent C (`paper-section-drafter`): 反論（Rebut）ドラフト作成
+In team mode, each phase has a quality gate. If the gate FAILS, the revision agent is automatically restarted to loop until PASS. It will escalate to the user after a maximum of 3 iterations.
 
-完了後、修正セクションに Phase 4（ヒューマナイズ）と Phase 6（品質レビュー）を再実行。
-
-#### Phase 9-10: 逐次実行（変更なし）
-イベント駆動（プルーフ到着、リジェクション通知）のため既存フローのまま。
-
-### チームモードの使い分け
-
-| 場面 | 推奨モード |
-|------|-----------|
-| Original Article（多セクション） | チームモード |
-| Systematic Review（大量文献） | チームモード |
-| Case Report（少セクション） | 逐次モード |
-| Letter / Short Communication | 逐次モード |
-| 締め切りが迫っている場合 | チームモード |
-
-### Autonomous Stage-Gate System（自律品質ゲート）
-
-チームモード時、各Phaseに品質ゲートを設ける。ゲートがFAILの場合、修正エージェントを自動再起動してPASSまでループする。最大3イテレーションでユーザーにエスカレーション。
-
-#### ゲートフロー
-
+#### Gate Flow
 ```
-Phase N 完了 → [ゲートエージェント] → PASS? → 次のPhaseへ
-                                    → FAIL + iter<3 → FEEDBACK.md生成 → [修正エージェント(revision_mode)] → ゲートに戻る
-                                    → FAIL + iter≥3 → ユーザーにエスカレーション（checklists/escalation-log.md）
+Phase N complete → [Gate Agent] → PASS? → Next Phase
+                                  → FAIL + iter<3 → Gen FEEDBACK.md → [Revision Agent] → Back to Gate
+                                  → FAIL + iter≥3 → Escalate to user
 ```
 
-#### Phase別ゲート定義
+#### Gate Definitions by Phase
 
-| Phase | ゲート名 | PASS条件 | ゲート担当 | 修正担当 |
-|-------|---------|---------|-----------|---------|
-| 1 | 文献品質 | ≥10論文、全DOI/URLあり、捏造なし | paper-section-reviewer | paper-lit-searcher |
-| 2 | アウトライン | 全IMRAD存在、≥2引用マッピング | paper-section-reviewer | ユーザーに即エスカレ |
-| 2.5 | 表・図 | 全設計ファイル完備、ジャーナル制限内 | paper-section-reviewer | paper-table-figure-planner |
-| 3 | セクション | score≥80%、Must Fix=0 | paper-section-reviewer | paper-section-drafter |
-| 4 | ヒューマナイズ | 高優先AIパターン残存0 | paper-section-reviewer | paper-humanizer |
-| 5 | 参考文献 | 捏造0、孤立引用0 | paper-ref-builder(verifier) | paper-ref-builder(builder) |
-| 6 | 横断整合 | PASS or CONDITIONAL_PASS | paper-quality-gate(Gemini 3.1 Pro (High)) | paper-section-drafter |
-| 7 | 投稿準備 | 全必須書類あり、語数制限内 | paper-section-reviewer | paper-section-drafter |
+| Phase | Gate Name | PASS Condition | Gate Assigned | Fix Assigned |
+|-------|-----------|----------------|---------------|--------------|
+| 1 | Lit Quality | ≥10 papers, DOIs present, no fab | paper-section-reviewer | paper-lit-searcher |
+| 2 | Outline | All IMRAD sections, ≥2 citations | paper-section-reviewer | User escalation |
+| 2.5 | Tables/Figs | All designs complete | paper-section-reviewer | paper-table-figure-planner |
+| 3 | Section | score≥80%, Must Fix=0 | paper-section-reviewer | paper-section-drafter |
+| 4 | Humanize | High-priority AI patterns=0 | paper-section-reviewer | paper-humanizer |
+| 5 | References | Fab=0, Orphan quotes=0 | paper-ref-builder(verifier) | paper-ref-builder(builder) |
+| 6 | Cross-Section | PASS or CONDITIONAL_PASS | paper-quality-gate | paper-section-drafter |
+| 7 | Submission | All docs present, word count OK | paper-section-reviewer | paper-section-drafter |
 
-#### フィードバックファイル形式
-
-ゲートFAIL時、オーケストレーターが `checklists/feedback-{phase}-{section}.md` を生成する：
-
+#### Feedback File Format
+On Gate FAIL, orchestrator generates `checklists/feedback-{phase}-{section}.md`:
 ```yaml
 ---
 revision_mode: true
@@ -1318,61 +1302,43 @@ source_file: {path/to/section_file.md}
 gate_verdict: FAIL
 ---
 ```
-
 ```markdown
 ## Must Fix
 ### Issue 1
-- item: {チェックリスト項目名}
-- location: {段落番号 or 行範囲}
-- problem: {問題の1文記述}
-- fix: {具体的な修正指示}
+- item: {checklist_item}
+- location: {paragraph or line}
+- problem: {description}
+- fix: {instructions}
 
-## Should Fix
-### Issue 2
-- item: {項目名}
-- fix: {修正指示}
-
-## Context (変更不可)
-- reporting_guideline: {PRISMA等}
-- journal: {ジャーナル名}
+## Context
 - language: {English/Vietnamese}
 ```
 
-#### 修正エージェントの起動方法
-
-ゲートFAIL時、修正エージェントに以下を渡す：
-
+#### Revision Agent Invocation
+On Gate FAIL, pass this to the revision agent:
 ```
 revision_mode: true
 feedback_file: {project_dir}/checklists/feedback-{phase}-{section}.md
 source_file: {project_dir}/{section_file.md}
 ```
+All revision agents will process only "Must Fix" items when `revision_mode: true`.
 
-全修正エージェント（paper-section-drafter, paper-humanizer, paper-lit-searcher, paper-table-figure-planner）は `revision_mode: true` を受け取ると、フィードバックの Must Fix 項目のみを処理し、通常の初期ワークフローをスキップする。
-
-#### ゲート状態の永続化
-
-`checklists/gate-state.md` でイテレーション回数を管理：
-
+#### Gate State Persistence
+Manage iteration count in `checklists/gate-state.md`:
 ```markdown
 | Phase | Section | Iteration | Status | Last Run |
 |-------|---------|-----------|--------|----------|
 | phase3 | methods | 2 | IN_PROGRESS | 2026-03-05 |
-| phase4 | intro | 0 | PASS | 2026-03-05 |
 ```
 
-#### エスカレーションプロトコル
+#### Escalation Protocol
+At 3 iterations:
+1. Log unresolved Must Fixes in `checklists/escalation-log.md`
+2. Display message to user
+3. Pause workflow
+4. Reset iteration counter upon user "continue"
 
-3イテレーション到達時：
-1. `checklists/escalation-log.md` に未解決の Must Fix 一覧と説明を記録
-2. ユーザーにメッセージ表示（該当ファイルパスと問題点を明示）
-3. ワークフローを一時停止
-4. ユーザーが手動修正後「continue」で再開 → イテレーションカウンターを0にリセット
-
-#### YAML verdict によるループ判定
-
-section-reviewer と quality-gate は出力ファイル冒頭にYAMLヘッダを付与する：
-
+#### YAML verdict for loop control
 ```yaml
 # section-reviewer
 ---
@@ -1381,25 +1347,15 @@ must_fix_count: {N}
 score_percent: {N}
 section: {name}
 ---
-
-# quality-gate
----
-gate_verdict: PASS | CONDITIONAL_PASS | FAIL
-must_fix_count: {N}
-affected_sections: [methods, results]
----
 ```
+Orchestrator reads YAML to control loops. CONDITIONAL_PASS is treated as PASS.
 
-オーケストレーターはYAMLヘッダのみ読み取ってループ継続/終了を判定する。CONDITIONAL_PASS（Should Fixのみ残存）はPASS扱い。
-
-#### 並列ゲート実行
-
-一部のゲートは並列実行可能：
-- **Phase 3**: Methods+Results ペア ‖ Introduction+Conclusion ペア（Discussion は独立）
-- **Phase 4**: 全セクションのヒューマナイズゲートを同時実行
-- **Phase 6**: 全セクションレビューの後に quality-gate（順序依存）
-
-Abstract のゲートは全セクション PASS 後に実行（他セクションの数値に依存するため）。
+#### Parallel Gate Execution
+Some gates can be executed in parallel:
+- **Phase 3**: Methods+Results pair ‖ Intro+Conclusion pair
+- **Phase 4**: All section humanize gates run parallel
+- **Phase 6**: Section reviews followed by quality-gate
+Abstract gate runs after all other sections PASS.
 
 ## Reference Files
 

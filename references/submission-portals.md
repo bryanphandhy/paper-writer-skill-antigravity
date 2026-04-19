@@ -107,9 +107,4 @@ A pre-submission inquiry typically includes:
 
 ---
 
-## Tiếng Việt投稿時の注意
 
-- Tiếng Việtジャーナルの多くはEditorial Managerまたは独自システムを使用
-- 英文ジャーナルへの投稿時は英語でフォーム入力
-- 倫理審査承認書の英訳が求められる場合がある
-- UMIN-CTRやjRCTの登録番号を入力

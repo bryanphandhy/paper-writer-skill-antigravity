@@ -226,79 +226,79 @@ We appreciate this suggestion and have added a new paragraph discussing clinical
 
 ---
 
-## Tiếng Việtセクション：査読者への回答テンプレート
+## Phần Tiếng Việt: Mẫu Phản hồi Phản biện
 
-### 基本フォーマット
+### Định dạng Cơ bản
 
-**原稿番号:** [MANUSCRIPT-ID]
-**タイトル:** [論文タイトル]
-**雑誌名:** [雑誌名]
-**改訂回:** [第1回改訂 / 第2回改訂]
-**日付:** [YYYY年MM月DD日]
-
----
-
-編集委員長・査読者の先生方
-
-この度は、本原稿に対する丁寧かつ建設的なご査読を賜り、心より感謝申し上げます。いただいたすべてのご指摘に対して慎重に検討し、原稿を大幅に改善いたしました。以下に、各ご指摘への回答を項目ごとに記載いたします。
-
-**本文書の表記規則：**
-- **査読者のコメント**は**太字**で表記
-- 著者の回答は通常書体で表記
-- 改訂原稿からの引用は > ブロック引用で表記
+**Mã số bản thảo:** [MANUSCRIPT-ID]
+**Tiêu đề:** [Tiêu đề bản thảo]
+**Tên tạp chí:** [Tên tạp chí]
+**Lần chỉnh sửa:** [Lần 1 / Lần 2]
+**Ngày:** [Ngày, Tháng, Năm]
 
 ---
 
-### 査読者1
+Kính gửi Ban Biên tập và các Phản biện,
 
-#### コメント1.1
+Chúng tôi xin chân thành cảm ơn Quý vị đã dành thời gian đọc và đưa ra những nhận xét mang tính xây dựng cho bản thảo của chúng tôi. Chúng tôi đã xem xét kỹ lưỡng tất cả các góp ý và tiến hành chỉnh sửa bản thảo một cách cẩn thận. Dưới đây là phản hồi chi tiết cho từng nhận xét của phản biện.
 
-**査読者1・コメント1：**
-**[査読者のコメントをそのまま記載]**
-
-**回答：**
-[具体的な回答を記載]
-
-**変更箇所：**
-- [X]ページ、[Y-Z]行目：[変更内容の説明]
-
-> [改訂後の本文を引用]
+**Quy ước trình bày trong tài liệu này:**
+- **Nhận xét của phản biện** được in **đậm**
+- Phản hồi của chúng tôi ở định dạng văn bản thường
+- Trích dẫn trực tiếp từ bản thảo đã chỉnh sửa được đặt trong khối trích dẫn (>)
 
 ---
 
-### 回答のポイント（Tiếng Việt論文の場合）
+### Phản biện 1
 
-1. **敬語を適切に使用する** -- 査読者は「先生」として扱う
-2. **「ご指摘のとおり」から始める** -- 同意できる場合はまずそこから
-3. **具体的なページ・行番号を必ず記載する**
-4. **反論する場合も丁寧に** -- 「ご指摘は大変重要ですが、以下の理由により...」
-5. **追加解析を行った場合は結果を明示する**
+#### Nhận xét 1.1
 
-### よくある査読コメントへの回答例（Tiếng Việt）
+**Phản biện 1, Nhận xét 1:**
+**[Sao chép nguyên văn nhận xét của phản biện]**
 
-#### 症例数が少ないという指摘
+**Phản hồi của chúng tôi:**
+[Cung cấp câu trả lời cụ thể của bạn]
 
-**査読者コメント：**
-**「症例数が少なく、結果の一般化可能性に疑問がある。」**
+**Các thay đổi đã thực hiện:**
+- Trang [X], Dòng [Y-Z]: [Mô tả nội dung thay đổi]
 
-**回答：**
-ご指摘いただきありがとうございます。本研究の症例数（n=XX）が比較的少数であることは認識しております。事前に行った検出力分析の結果、主要アウトカムに対して80%の検出力を達成するために必要な症例数はXX例であり、本研究はこの基準を満たしております（[X]ページ、[Y]行目に追記）。一方で、症例数の限界についてはDiscussionのlimitationに明記いたしました（[X]ページ、[Y-Z]行目）。
+> [Trích dẫn đoạn văn bản mới/đã chỉnh sửa từ bản thảo]
 
-#### 統計手法への指摘
+---
 
-**査読者コメント：**
-**「多重比較の補正が行われていない。」**
+### Các Điểm Cần Lưu Ý Khi Trả Lời (Tiếng Việt)
 
-**回答：**
-大変重要なご指摘をいただき感謝申し上げます。ご指摘に従い、Bonferroni補正を適用して再解析を行いました。補正後も主要な結果に変更はありませんでした（改訂版Table 2参照）。Methods（[X]ページ、[Y]行目）およびResults（[X]ページ、[Y]行目）を修正いたしました。
+1. **Sử dụng từ ngữ lịch sự, tôn trọng** -- Luôn xưng hô trang trọng với Ban Biên tập và Phản biện.
+2. **Luôn bắt đầu bằng sự đồng tình (nếu có thể)** -- "Chúng tôi hoàn toàn đồng ý với nhận xét này..."
+3. **Luôn ghi rõ số trang và dòng cụ thể**
+4. **Phản biện một cách lịch sự** -- "Chúng tôi hiểu quan ngại của phản biện, tuy nhiên vì những lý do sau..."
+5. **Nêu rõ kết quả nếu có phân tích bổ sung**
 
-#### 臨床的意義への指摘
+### Ví Dụ Phản Hồi Các Nhận Xét Phổ Biến
 
-**査読者コメント：**
-**「統計的有意差はあるが、臨床的意義が不明確である。」**
+#### Phản hồi về cỡ mẫu nhỏ
 
-**回答：**
-貴重なご指摘をいただきありがとうございます。臨床的意義を明確にするため、効果量（Cohen's d = X.XX）および治療必要数（NNT = XX）を追記いたしました（[X]ページ、[Y-Z]行目）。また、Discussionにおいて、この結果が臨床現場でどのような意味を持つかについて具体的に記述を追加いたしました（[X]ページ、[Y-Z]行目）。
+**Nhận xét của phản biện:**
+**"Cỡ mẫu nghiên cứu quá nhỏ, gây nghi ngờ về khả năng tổng quát hóa của kết quả."**
+
+**Phản hồi của chúng tôi:**
+Chúng tôi xin cảm ơn phản biện về nhận xét này. Chúng tôi nhận thức được rằng cỡ mẫu của nghiên cứu (n=XX) là tương đối nhỏ. Tuy nhiên, dựa trên phân tích lực lượng mẫu (power analysis) được thực hiện từ trước, cỡ mẫu cần thiết để đạt độ kết quả 80% cho biến số chính là XX, do đó nghiên cứu của chúng tôi đã đáp ứng tiêu chí này (bổ sung ở Trang [X], Dòng [Y]). Đồng thời, chúng tôi cũng đã ghi rõ hạn chế về cỡ mẫu trong phần Bàn luận (Trang [X], Dòng [Y-Z]).
+
+#### Phản hồi về phương pháp thống kê
+
+**Nhận xét của phản biện:**
+**"Không có sự hiệu chỉnh cho so sánh nhiều lần (multiple comparisons)."**
+
+**Phản hồi của chúng tôi:**
+Đây là một góp ý rất quan trọng và chúng tôi xin chân thành cảm ơn. Theo gợi ý của phản biện, chúng tôi đã áp dụng hiệu chỉnh Bonferroni và tiến hành phân tích lại. Sau khi hiệu chỉnh, các kết quả chính vẫn không thay đổi (Xem Bảng 2 đã chỉnh sửa). Chúng tôi đã cập nhật phần Phương pháp (Trang [X], Dòng [Y]) và phần Kết quả (Trang [X], Dòng [Y]).
+
+#### Phản hồi về ý nghĩa lâm sàng
+
+**Nhận xét của phản biện:**
+**"Mặc dù có ý nghĩa thống kê, nhưng ý nghĩa lâm sàng chưa rõ ràng."**
+
+**Phản hồi của chúng tôi:**
+Chúng tôi rất trân trọng nhận xét này. Để làm rõ ý nghĩa lâm sàng, chúng tôi đã bổ sung effect size (Cohen's d = X.XX) và chỉ số NNT (NNT = XX) (Trang [X], Dòng [Y-Z]). Ngoài ra, trong phần Bàn luận, chúng tôi đã viết thêm một đoạn phân tích cụ thể về việc kết quả này có ý nghĩa như thế nào trong thực hành lâm sàng thực tế (Trang [X], Dòng [Y-Z]).
 
 ---
 

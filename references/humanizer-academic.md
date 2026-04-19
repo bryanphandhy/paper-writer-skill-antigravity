@@ -1,10 +1,6 @@
-# Academic Humanizer: AI臭除去ガイド
 
-AI が生成した学術文章から「AI臭」を除去し、人間が書いたと感じる自然な学術文章に仕上げるためのリファレンス。
 
 出典:
-- matsuikentaro1/humanizer_academic (英語18パターン)
-- humanizer-ja --academic モード (Tiếng Việt30パターン)
 - Wikipedia: Signs of AI writing
 
 ---

@@ -32,13 +32,8 @@ funded by [Funder]. [Name] did not influence the scientific content.
 - Medical writers and statistical consultants should be acknowledged
 - Do NOT list authors in Acknowledgments (they are in the author list)
 
-## Tiếng Việtテンプレート
 ```
 謝辞
 
-本研究の統計解析について[所属]の[氏名]先生にご指導いただいた。
-[データ収集について[所属]の[氏名]氏にご協力いただいた。]
-[本研究にご参加いただいた患者の皆様に深く感謝する。]
-[本研究の英文校正にはAIツール（[ツール名]）を使用した。内容の正確性は著者が責任を負う。]
 ```
 

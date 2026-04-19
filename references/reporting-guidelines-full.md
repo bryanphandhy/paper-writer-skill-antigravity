@@ -248,21 +248,12 @@ Used in systematic reviews and clinical guidelines.
 
 ## Tiếng Việt
 
-### 報告ガイドライン選択
 
-| 研究デザイン | ガイドライン |
 |-----------|------------|
-| ランダム化比較試験 | CONSORT 2025 |
-| コホート研究 | STROBE |
-| ケースコントロール研究 | STROBE |
 | 横断研究 | STROBE |
-| システマティックレビュー | PRISMA 2020 |
 | 症例報告 | CARE |
 | 診断精度研究 | STARD 2015 |
 | QI研究 | SQUIRE 2.0 |
 | 動物実験 | ARRIVE 2.0 |
-| プロトコル論文 | SPIRIT 2025 |
 | 医療経済学 | CHEERS 2022 |
-| 予測モデル（AI含む） | TRIPOD+AI 2024 |
 
-EQUATOR Network (https://www.equator-network.org/) で全ガイドラインのチェックリストが入手可能。

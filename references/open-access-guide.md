@@ -103,11 +103,4 @@ Many publishers offer APC waivers for:
 
 ## Tiếng Việt
 
-### オープンアクセスの選択
 
-- 日本の科研費ではOAは推奨されているが義務ではない（2026年現在）
-- 機関リポジトリ（Green OA）は多くの大学で整備済み
-- APCは研究費から支出可能（直接経費）
-- CC BY 4.0が国際的な標準ライセンス
-- J-STAGEは多くのTiếng Việtジャーナルのプラットフォーム
-- medRxivへのプレプリント投稿は日本からも増加中

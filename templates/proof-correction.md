@@ -61,4 +61,3 @@ Page X, Figure 2 legend: Add "CI, confidence interval" to abbreviation list
 
 ## Tiếng Việt
 
-校正は通常48-72時間以内に返却が必要。大幅な変更は不可。誤字脱字、数値の誤り、著者情報の修正のみ。PDFに直接注釈を入れるか、修正リストを作成して返却する。
