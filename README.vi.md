@@ -50,4 +50,10 @@ Kỹ năng này dựa vào khả năng của không gian làm việc Antigravity
 | **Thư gửi Tòa soạn (Letter / Short Communication)** | Condensed IMRAD | Tương tự bài báo gốc |
 | **Đề cương Nghiên cứu (Study Protocol)** | SPIRIT-compliant | SPIRIT 2025 |
 
+## Các Phiên bản
+
+- **v4.0.0** (2026-04-20) — Tích hợp hệ thống Antigravity, Consensus MCP, và hỗ trợ hoàn toàn tiếng Việt.
+- **v3.2.0** (2026-03-05) — Quản lý thư mục dự án nghiên cứu: tái cấu trúc toàn diện
+- **v3.1.0** (2026-03-05) — Hệ thống tự động: 8 cổng đánh giá chất lượng tự động
+
 Xem [CHANGELOG.md](CHANGELOG.md) để biết thêm chi tiết.

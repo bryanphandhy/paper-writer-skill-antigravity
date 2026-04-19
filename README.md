@@ -1,4 +1,4 @@
-﻿# Paper Writer Skill
+# Paper Writer Skill
 
 A Antigravity skill for medical/scientific paper writing. Covers the entire manuscript lifecycle from literature search to submission, peer review response, and rejection handling.
 
@@ -348,6 +348,7 @@ Private repository.
 
 ## Versions
 
+- **v4.0.0** (2026-04-20) — Antigravity adaptation, Consensus MCP integration, and full Vietnamese language support.
 - **v3.2.0** (2026-03-05) — Research project folder management: comprehensive directory restructuring
 - **v3.1.0** (2026-03-05) — Autonomous Stage-Gate System: 8 quality gates with auto-fix loops
 - **v3.0.0** (2026-03-05) — Team Mode: 7 parallel agents for concurrent execution

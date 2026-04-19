@@ -1,4 +1,18 @@
-﻿# Changelog
+# Changelog
+
+## [4.0.0] - 2026-04-20
+
+### Antigravity & Consensus MCP Integration
+
+Adapted the repository for the Antigravity platform, leveraging Gemini agents and the Consensus MCP.
+
+### Changes
+- **Tool Integration**: Replaced generic web search with `mcp_Consensus_search` in the literature review phase for high-quality, peer-reviewed paper retrieval.
+- **Vietnamese Support**: Removed all Japanese documentation, replacing it entirely with Vietnamese guidelines.
+- **Writing Standards**: Re-wrote `multilingual-guide.md` and `humanizer-academic.md` to reflect specific Vietnamese academic writing and AI-generation-removal patterns.
+- **README Translation**: Introduced `README.vi.md` as the primary translated overview.
+
+---
 
 ## [3.2.0] - 2026-03-05
 
